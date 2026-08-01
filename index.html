@@ -283,11 +283,24 @@ if(!isTouch && !reduced) document.querySelectorAll('.magnetic').forEach(btn=>{
   });
   btn.addEventListener('mouseleave',()=>gsap.to(btn,{x:0,y:0,duration:.65,ease:'elastic.out(1,.35)'}));
 });
+/* Spotlight — desktop (hover) + móvil (tap en imágenes de sección) */
+function spotOn(el){document.body.classList.add('spot-on');el.classList.add('spot-active');}
+function spotOff(){document.body.classList.remove('spot-on');
+  document.querySelectorAll('.spot-active').forEach(e=>e.classList.remove('spot-active'));}
 if(!isTouch){
   document.querySelectorAll('.spot-target').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{document.body.classList.add('spot-on');el.classList.add('spot-active');});
-    el.addEventListener('mouseleave',()=>{document.body.classList.remove('spot-on');el.classList.remove('spot-active');});
+    el.addEventListener('pointerenter',()=>spotOn(el));
+    el.addEventListener('pointerleave',spotOff);
   });
+}else{
+  document.querySelectorAll('.mframe.spot-target').forEach(el=>{
+    el.addEventListener('click',e=>{
+      if(el.classList.contains('spot-active')){spotOff();return;}
+      e.preventDefault();spotOff();spotOn(el);
+    });
+  });
+  document.addEventListener('click',e=>{if(!e.target.closest('.spot-target'))spotOff();});
+  addEventListener('scroll',spotOff,{passive:true});
 }
 const VERT=`varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position,1.);}`;
 const FRAG_REVEAL=`
