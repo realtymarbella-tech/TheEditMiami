@@ -118,6 +118,28 @@ section.proj-sec{padding:clamp(90px,12vw,160px) var(--page-x)}
 blockquote{font-family:var(--serif);font-style:italic;font-size:21px;font-weight:300;color:var(--charcoal-700);border-left:1px solid var(--sunset);padding-left:22px;margin-bottom:30px;line-height:1.5}
 blockquote cite{display:block;font-family:var(--sans);font-style:normal;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--charcoal-400);margin-top:10px}
 .lowres-note{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--charcoal-400);margin-top:8px}
+/* ══ COMPARADOR DE TORRES ══ */
+section.compare-sec{padding:clamp(90px,12vw,160px) var(--page-x)}
+.compare{max-width:1180px;margin:0 auto;text-align:center}
+.compare h2{font-family:var(--serif);font-size:clamp(30px,3.6vw,48px);font-weight:300;color:var(--charcoal-950);margin-bottom:10px}
+.compare h2 em{font-style:italic;font-weight:300}
+.compare>p{font-size:14.5px;font-weight:300;color:var(--charcoal-500);max-width:520px;margin:0 auto 60px}
+.skyline{display:flex;align-items:flex-end;justify-content:center;gap:clamp(28px,6vw,90px);height:480px;border-bottom:1px solid var(--charcoal-400);padding:0 20px}
+.sil{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;cursor:pointer}
+.sil svg{display:block;overflow:visible}
+.sil svg .tpath{fill:var(--charcoal-200);fill-opacity:0;stroke:var(--charcoal-500);stroke-width:1.5;transition:fill .45s,stroke .45s}
+.sil:hover svg{transform:translateY(-6px);transition:transform .4s var(--ease)}
+.sil.s-cip:hover .tpath{fill:#FCE8D2;fill-opacity:1;stroke:var(--sunset-dk)}
+.sil.s-elle:hover .tpath{fill:#FBE3EA;fill-opacity:1;stroke:var(--flamingo)}
+.sil.s-dom:hover .tpath{fill:#D8F2EF;fill-opacity:1;stroke:var(--aqua)}
+.sil-info{position:absolute;bottom:calc(100% + 12px);left:50%;transform:translate(-50%,8px);opacity:0;pointer-events:none;
+  background:var(--charcoal-950);color:var(--cream);padding:14px 20px;min-width:212px;transition:all .35s var(--ease);text-align:left;z-index:5}
+.sil:hover .sil-info{opacity:1;transform:translate(-50%,0)}
+.sil-info b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+.sil-info span{display:block;font-size:11.5px;font-weight:300;color:var(--charcoal-200);line-height:1.6}
+.sil-label{margin-top:16px;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--charcoal-700)}
+.sil-ft{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--charcoal-500)}
+@media(max-width:700px){.skyline{height:340px;gap:22px}.skyline svg{transform:scale(.72);transform-origin:bottom}}
 .fade{opacity:0;transform:translateY(18px)}
 .rev{opacity:0;transform:translateY(26px)}
 @media(prefers-reduced-motion:reduce){
@@ -142,6 +164,7 @@ blockquote cite{display:block;font-family:var(--sans);font-style:normal;font-siz
     <a href="#cipriani">Cipriani</a>
     <a href="#elle">Elle Residences</a>
     <a href="#domus">Domus Brickell</a>
+<a href="#comparar">Comparar</a>
     <span class="nav-sep"></span>
     <a class="nav-cta magnetic" href="#contacto">Acceso Privado</a>
   </div>
@@ -246,6 +269,30 @@ blockquote cite{display:block;font-family:var(--sans);font-style:normal;font-siz
       <a class="plink c-aqua rev" href="#contacto">Explorar Domus</a>
     </div>
   </div>
+</section>
+<section class="compare-sec" id="comparar" data-bg="#FDFCFB">
+<div class="compare">
+<div class="overline c-aqua rev">La colección, a escala real</div>
+<h2 class="rev">Tres torres. <em>Una ciudad.</em></h2>
+<p class="rev">Siluetas a escala proporcional según la altura real de cada desarrollo. Pase el cursor sobre cada torre.</p>
+<div class="skyline">
+<div class="sil s-elle">
+<div class="sil-info"><b>Elle Residences</b><span>26 plantas · ~300 ft<br>Edgewater · Desde $600K<br>Entrega 2026</span></div>
+<svg width="84" height="150" viewBox="0 0 84 150" aria-label="Silueta Elle Residences"><path class="tpath" d="M22 150 V22 H38 V12 H62 V150 Z"/></svg>
+<div class="sil-ft">300 ft</div><div class="sil-label">Elle</div>
+</div>
+<div class="sil s-cip">
+<div class="sil-info"><b>Cipriani Residences</b><span>85 plantas · 950 ft<br>La torre residencial más alta de Florida<br>Brickell · Desde $1.8M</span></div>
+<svg width="110" height="440" viewBox="0 0 110 440" aria-label="Silueta Cipriani Residences"><path class="tpath" d="M30 440 C22 300 24 160 38 10 H72 C86 160 88 300 80 440 Z"/></svg>
+<div class="sil-ft">950 ft</div><div class="sil-label">Cipriani</div>
+</div>
+<div class="sil s-dom">
+<div class="sil-info"><b>Domus Brickell</b><span>35 plantas · ~400 ft<br>Brickell · Desde $500K<br>Entrega 2028</span></div>
+<svg width="92" height="190" viewBox="0 0 92 190" aria-label="Silueta Domus Brickell"><path class="tpath" d="M18 190 V30 H44 V16 H74 V190 Z"/></svg>
+<div class="sil-ft">400 ft</div><div class="sil-label">Domus</div>
+</div>
+</div>
+</div>
 </section>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -373,6 +420,19 @@ function intro(){
     .to('.hero .fade',{opacity:1,y:0,duration:.9,stagger:.12},'-=.8')
     .fromTo('.card',{opacity:0,y:26},{opacity:1,y:0,duration:1,stagger:.14},'-=.9');
   initSections();
+  (function initCompare(){
+    const paths=document.querySelectorAll('.sil .tpath');
+    if(!paths.length) return;
+    if(reduced){paths.forEach(p=>{p.style.fillOpacity=.35;});return;}
+    paths.forEach(p=>{
+      const len=p.getTotalLength();
+      p.style.strokeDasharray=len;p.style.strokeDashoffset=len;
+      gsap.to(p,{strokeDashoffset:0,ease:'none',
+        scrollTrigger:{trigger:'.skyline',start:'top 85%',end:'top 35%',scrub:.5}});
+    });
+    gsap.to(paths,{fillOpacity:.35,duration:.8,ease:'power2.out',
+      scrollTrigger:{trigger:'.skyline',start:'top 38%'}});
+  })();
 }
 if(reduced){const l=document.getElementById('loader');if(l)l.remove();
   document.getElementById('nav').style.transform='none';intro();}
