@@ -139,7 +139,15 @@ section.compare-sec{padding:clamp(90px,12vw,160px) var(--page-x)}
 .sil-info span{display:block;font-size:11.5px;font-weight:300;color:var(--charcoal-200);line-height:1.6}
 .sil-label{margin-top:16px;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--charcoal-700)}
 .sil-ft{font-family:var(--serif);font-size:22px;font-weight:300;color:var(--charcoal-500)}
-@media(max-width:700px){.skyline{height:340px;gap:22px}.skyline svg{transform:scale(.72);transform-origin:bottom}}
+@media(max-width:700px){
+.skyline{height:340px;gap:22px}
+.skyline svg{transform:scale(.72);transform-origin:bottom}
+/* Tooltip móvil: ficha fija inferior, nunca se corta */
+.sil-info{position:fixed;left:50%;right:auto;top:auto;bottom:20px;
+  transform:translate(-50%,12px);width:min(88vw,340px);min-width:0;
+  box-shadow:0 8px 32px rgba(0,0,0,.35);z-index:300}
+.sil:hover .sil-info{transform:translate(-50%,0)}
+}
 .fade{opacity:0;transform:translateY(18px)}
 .rev{opacity:0;transform:translateY(26px)}
 @media(prefers-reduced-motion:reduce){
