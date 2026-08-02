@@ -34,7 +34,6 @@ body.spot-on #spotOverlay{opacity:1}
 #loader .l-logo em{font-style:italic;color:var(--aqua-lt)}
 
 
-#loader .l-num{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--charcoal-400)}
 #cursor,#cursorRing{position:fixed;top:0;left:0;pointer-events:none;z-index:998;border-radius:50%;transform:translate(-50%,-50%)}
 #cursor{width:8px;height:8px;background:var(--cream);mix-blend-mode:difference}
 #cursorRing{width:38px;height:38px;border:1px solid rgba(253,252,251,.55);mix-blend-mode:difference;transition:width .35s var(--ease),height .35s var(--ease)}
@@ -213,7 +212,7 @@ color:var(--sm-sub);white-space:nowrap}
 <span class="sm-logo__name">SANTAMARIA</span>
 <span class="sm-logo__rule-group" aria-hidden="true"><span class="sm-logo__rule"></span><span class="sm-logo__sub">COLLECTION</span><span class="sm-logo__rule"></span></span></a></div>
   
-  <div class="l-num">0</div>
+  
 </div>
 <div id="cursor" aria-hidden="true"></div><div id="cursorRing" aria-hidden="true"></div>
 <nav id="nav">
@@ -562,7 +561,7 @@ function intro(){
 if(reduced){const l=document.getElementById('loader');if(l)l.remove();
   document.getElementById('nav').style.transform='none';intro();}
 else{
-  const num=document.querySelector('#loader .l-num'),o={v:0};
+  
   gsap.timeline({onComplete:()=>{
       gsap.to('#loader',{yPercent:-100,duration:.9,ease:'power4.inOut',
         onComplete:()=>document.getElementById('loader').remove()});
@@ -570,8 +569,7 @@ else{
   }})
   .fromTo('#loader .l-logo',{opacity:0,y:16},{opacity:1,y:0,duration:.9,ease:'power3.out'})
   .to('#loader .sm-logo__rule',{scaleX:1,duration:1.4,ease:'power2.inOut'},'-=.3')
-  .to('#loader .sm-logo__sub',{opacity:1,duration:.7,ease:'power2.out'},'-=.5')
-  .to(o,{v:100,duration:1.4,ease:'power2.inOut',onUpdate:()=>num.textContent=Math.round(o.v)},'<');
+  .to('#loader .sm-logo__sub',{opacity:1,duration:.7,ease:'power2.out'},'-=.5');
 }
 </script>
 </body>
