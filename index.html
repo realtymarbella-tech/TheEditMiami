@@ -32,8 +32,8 @@ body.spot-on #spotOverlay{opacity:1}
 #loader{position:fixed;inset:0;z-index:999;background:var(--charcoal-950);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
 #loader .l-logo{font-family:var(--serif);font-size:clamp(30px,4vw,46px);font-weight:300;letter-spacing:.16em;text-transform:uppercase;overflow:hidden;color:var(--cream)}
 #loader .l-logo em{font-style:italic;color:var(--aqua-lt)}
-#loader .l-bar{width:210px;height:1px;background:var(--charcoal-700);overflow:hidden}
-#loader .l-bar i{display:block;height:100%;background:var(--aqua);transform:scaleX(0);transform-origin:left}
+
+
 #loader .l-num{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--charcoal-400)}
 #cursor,#cursorRing{position:fixed;top:0;left:0;pointer-events:none;z-index:998;border-radius:50%;transform:translate(-50%,-50%)}
 #cursor{width:8px;height:8px;background:var(--cream);mix-blend-mode:difference}
@@ -197,6 +197,10 @@ font-size:var(--sm-size);letter-spacing:0.06em;color:var(--sm-ink);white-space:n
 font-size:calc(var(--sm-size)*0.2);letter-spacing:0.42em;padding-left:0.42em;
 color:var(--sm-sub);white-space:nowrap}
 .sm-logo--light{--sm-ink:#FDFCFB;--sm-rule:#FF8DA6;--sm-sub:#FF8DA6}
+#loader .sm-logo__rule{transform:scaleX(0)}
+#loader .sm-logo__rule:first-child{transform-origin:right}
+#loader .sm-logo__rule:last-child{transform-origin:left}
+#loader .sm-logo__sub{opacity:0}
 .sm-logo--nav{--sm-size:34px}
 .sm-logo--footer{--sm-size:44px;margin-bottom:14px;display:flex;width:max-content}
 @media(max-width:640px){.sm-logo--footer{--sm-size:34px}}
@@ -208,7 +212,7 @@ color:var(--sm-sub);white-space:nowrap}
   <div class="l-logo"><a class="sm-logo sm-logo--light">
 <span class="sm-logo__name">SANTAMARIA</span>
 <span class="sm-logo__rule-group" aria-hidden="true"><span class="sm-logo__rule"></span><span class="sm-logo__sub">COLLECTION</span><span class="sm-logo__rule"></span></span></a></div>
-  <div class="l-bar"><i></i></div>
+  
   <div class="l-num">0</div>
 </div>
 <div id="cursor" aria-hidden="true"></div><div id="cursorRing" aria-hidden="true"></div>
@@ -565,8 +569,9 @@ else{
       intro();
   }})
   .fromTo('#loader .l-logo',{opacity:0,y:16},{opacity:1,y:0,duration:.9,ease:'power3.out'})
-  .to('#loader .l-bar i',{scaleX:1,duration:1.3,ease:'power2.inOut'},'-=.3')
-  .to(o,{v:100,duration:1.3,ease:'power2.inOut',onUpdate:()=>num.textContent=Math.round(o.v)},'<');
+  .to('#loader .sm-logo__rule',{scaleX:1,duration:1.4,ease:'power2.inOut'},'-=.3')
+  .to('#loader .sm-logo__sub',{opacity:1,duration:.7,ease:'power2.out'},'-=.5')
+  .to(o,{v:100,duration:1.4,ease:'power2.inOut',onUpdate:()=>num.textContent=Math.round(o.v)},'<');
 }
 </script>
 </body>
