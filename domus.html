@@ -159,6 +159,21 @@ color:var(--sm-sub);white-space:nowrap}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.14/lenis.min.js"></script>
 <script>
+function captureLead(d,origen){
+  try{
+    fetch('https://sqdvkfcghdjxtyuybxpy.supabase.co/rest/v1/leads',{
+      method:'POST',keepalive:true,
+      headers:{'Content-Type':'application/json',
+        'Content-Profile':'santamaria',
+        'apikey':'sb_publishable_LIaG8wb4ciGYSVkUAI8UeQ_wj3BVR4j',
+        'Authorization':'Bearer sb_publishable_LIaG8wb4ciGYSVkUAI8UeQ_wj3BVR4j',
+        'Prefer':'return=minimal'},
+      body:JSON.stringify({nombre:d.nombre||'',apellidos:d.apellidos||'',
+        email:d.email||'',telefono:d.telefono||'',proyecto:d.proyecto||origen,origen:origen})
+    }).catch(()=>{});
+  }catch(e){}
+}
+
 gsap.registerPlugin(ScrollTrigger);
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduced && typeof Lenis!=='undefined'){
