@@ -176,6 +176,15 @@ footer{background:#071A23;color:var(--charcoal-200);padding:56px var(--page-x) 3
 .foot a:hover{color:var(--cream)}
 .legal{max-width:1280px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);font-size:10.5px;font-weight:300;color:var(--charcoal-500);line-height:1.7}
 @media(max-width:760px){.foot{grid-template-columns:1fr;gap:32px}}
+
+/* ══ CURSOR DOBLE ══ */
+#cursor,#cursorRing{position:fixed;top:0;left:0;pointer-events:none;z-index:998;border-radius:50%;transform:translate(-50%,-50%)}
+#cursor{width:8px;height:8px;background:var(--cream);mix-blend-mode:difference}
+#cursorRing{width:38px;height:38px;border:1px solid rgba(253,252,251,.55);mix-blend-mode:difference;transition:width .35s var(--ease),height .35s var(--ease)}
+body.cur-big #cursorRing{width:72px;height:72px}
+@media(pointer:coarse){#cursor,#cursorRing{display:none}}
+body{cursor:none}
+@media(pointer:coarse){body{cursor:auto}}
 .fade{opacity:0;transform:translateY(18px)}
 .rev{opacity:0;transform:translateY(26px)}
 @media(prefers-reduced-motion:reduce){
@@ -370,7 +379,7 @@ color:var(--sm-sub);white-space:nowrap}
 <option>Domus Brickell</option>
 <option>Los tres — dossier completo</option>
 </select>
-<button class="btn btn-solid" type="submit">Solicitar por WhatsApp</button>
+<button class="btn btn-solid magnetic" type="submit">Solicitar por WhatsApp</button>
 <div class="form-note">Respuesta en menos de 24h · También por email: info@theeditmarbella.com</div>
 </form>
 </div>
@@ -398,6 +407,32 @@ color:var(--sm-sub);white-space:nowrap}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.14/lenis.min.js"></script>
 <script>
+/* ══ CURSOR + MAGNÉTICOS (Módulo 6) ══ */
+(function(){
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isTouch = matchMedia('(pointer: coarse)').matches;
+  if (isTouch || reduced || typeof gsap === 'undefined') return;
+
+  const dot = document.getElementById('cursor'), ring = document.getElementById('cursorRing');
+  if (dot && ring) {
+    const dx = gsap.quickTo(dot,'x',{duration:.12,ease:'power3'}), dy = gsap.quickTo(dot,'y',{duration:.12,ease:'power3'});
+    const rx = gsap.quickTo(ring,'x',{duration:.45,ease:'power3'}), ry = gsap.quickTo(ring,'y',{duration:.45,ease:'power3'});
+    addEventListener('mousemove', e => { dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
+    document.querySelectorAll('a,button').forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cur-big'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cur-big'));
+    });
+  }
+
+  document.querySelectorAll('.magnetic').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      gsap.to(btn, {x:(e.clientX-r.left-r.width/2)*.28, y:(e.clientY-r.top-r.height/2)*.4, duration:.4, ease:'power3'});
+    });
+    btn.addEventListener('mouseleave', () => gsap.to(btn, {x:0, y:0, duration:.65, ease:'elastic.out(1,.35)'}));
+  });
+})();
+
 function captureLead(d,origen){
   try{
     fetch('https://sqdvkfcghdjxtyuybxpy.supabase.co/rest/v1/leads',{
