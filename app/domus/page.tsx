@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProjectFicha from "@/components/ProjectFicha";
+import SchemaOrg from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
   title: "Domus Brickell Miami Precio | Inversión Airbnb Miami | Desde $500K | Santamaría Collection",
@@ -13,7 +14,17 @@ export const metadata: Metadata = {
 
 export default function DomusPage() {
   return (
-    <ProjectFicha
+    <>
+      <SchemaOrg
+        name="Domus Brickell Center"
+        description="579 FLATS amueblados en Brickell. Modelo de inversión flexible con renta corta sin restricciones y gestión hotelera profesional integrada."
+        url="https://santamaria-collection.vercel.app/domus"
+        image="https://santamaria-collection.vercel.app/images/og/og-domus.jpg"
+        price="500000"
+        address="185 SW 7th St, Brickell"
+        numberOfRooms="Studio-2"
+      />
+      <ProjectFicha
       slug="domus"
       accent="#2AB5AE"
       accentDk="#1F9993"
@@ -35,5 +46,6 @@ export default function DomusPage() {
       gallery={["/images/domus/rooftop.webp","/images/domus/interior.webp","/images/domus/winebar.webp","/images/domus/peacock.webp"]}
       other={[{slug:"cipriani",name:"Cipriani Residences"},{slug:"elle",name:"Elle Residences"}]}
     />
+    </>
   );
 }

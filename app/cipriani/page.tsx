@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProjectFicha from "@/components/ProjectFicha";
+import SchemaOrg from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
   title: "Cipriani Residences Miami Precio | 950 ft Brickell | Desde $1.8M | Santamaría Collection",
@@ -13,7 +14,17 @@ export const metadata: Metadata = {
 
 export default function CiprianiPage() {
   return (
-    <ProjectFicha
+    <>
+      <SchemaOrg
+        name="Cipriani Residences Miami"
+        description="La primera residencia Cipriani construida desde cero en América. 85 plantas, 950 pies, 397 residencias diseñadas por Arquitectonica con interiores de 1508 London."
+        url="https://santamaria-collection.vercel.app/cipriani"
+        image="https://santamaria-collection.vercel.app/images/og/og-cipriani.jpg"
+        price="1800000"
+        address="1420 S Miami Ave"
+        numberOfRooms="1-4"
+      />
+      <ProjectFicha
       slug="cipriani"
       accent="#F5A95C"
       accentDk="#D98B3F"
@@ -35,5 +46,6 @@ export default function CiprianiPage() {
       gallery={["/images/cipriani/exterior2.webp","/images/cipriani/gallery1.webp","/images/cipriani/gallery2.webp","/images/cipriani/gallery3.webp"]}
       other={[{slug:"elle",name:"Elle Residences"},{slug:"domus",name:"Domus Brickell"}]}
     />
+    </>
   );
 }

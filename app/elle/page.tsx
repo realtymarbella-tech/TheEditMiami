@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProjectFicha from "@/components/ProjectFicha";
+import SchemaOrg from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
   title: "Elle Residences Miami Precio | Apartamentos Edgewater | Desde $600K | Santamaría Collection",
@@ -13,7 +14,17 @@ export const metadata: Metadata = {
 
 export default function EllePage() {
   return (
-    <ProjectFicha
+    <>
+      <SchemaOrg
+        name="Elle Residences Miami"
+        description="La primera ELLE Residences del mundo. 180 residencias totalmente amuebladas en Edgewater, Miami. Diseño editorial, chic francés, sin restricciones de alquiler."
+        url="https://santamaria-collection.vercel.app/elle"
+        image="https://santamaria-collection.vercel.app/images/og/og-elle.jpg"
+        price="600000"
+        address="2900 NE 7th Ave, Edgewater"
+        numberOfRooms="Studio-2"
+      />
+      <ProjectFicha
       slug="elle"
       accent="#E96A8D"
       accentDk="#C94C72"
@@ -35,5 +46,6 @@ export default function EllePage() {
       gallery={["/images/elle/living.webp","/images/elle/dining.webp","/images/elle/pool.webp","/images/elle/view25.webp"]}
       other={[{slug:"cipriani",name:"Cipriani Residences"},{slug:"domus",name:"Domus Brickell"}]}
     />
+    </>
   );
 }
