@@ -4,10 +4,8 @@ interface Props {
   url: string;
   image: string;
   price: string;
-  priceCurrency?: string;
   address: string;
   numberOfRooms?: string;
-  floorSize?: string;
 }
 
 export default function SchemaOrg(p: Props) {
@@ -21,24 +19,34 @@ export default function SchemaOrg(p: Props) {
     "offers": {
       "@type": "Offer",
       "price": p.price,
-      "priceCurrency": p.priceCurrency ?? "USD",
+      "priceCurrency": "USD",
       "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "RealEstateAgent",
+        "name": "Santamaría Collection",
+        "url": "https://santamaria-collection.vercel.app",
+        "telephone": "+34610589716",
+        "email": "info@santamaria-collection.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Miami",
+          "addressRegion": "FL",
+          "streetAddress": p.address,
+          "addressCountry": "US",
+        },
+      },
     },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": p.address,
-      "addressLocality": "Miami",
-      "addressRegion": "FL",
-      "addressCountry": "US",
-    },
-    ...(p.numberOfRooms && { "numberOfRooms": p.numberOfRooms }),
-    ...(p.floorSize && { "floorSize": { "@type": "QuantitativeValue", "value": p.floorSize, "unitCode": "FTK" } }),
-    "provider": {
-      "@type": "RealEstateAgent",
-      "name": "Santamaría Collection",
-      "url": "https://santamaria-collection.vercel.app",
-      "telephone": "+34610589716",
-      "email": "info@santamaria-collection.com",
+    "about": {
+      "@type": "Accommodation",
+      "name": p.name,
+      "numberOfRooms": p.numberOfRooms,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": p.address,
+        "addressLocality": "Miami",
+        "addressRegion": "FL",
+        "addressCountry": "US",
+      },
     },
   };
 
