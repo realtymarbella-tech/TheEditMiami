@@ -6,10 +6,12 @@ import TowerCompare from "@/components/TowerCompare";
 import Dossier from "@/components/Dossier";
 import Footer from "@/components/Footer";
 import ScrollRefresh from "@/components/ScrollRefresh";
+import Loader from "@/components/Loader";
 
 export default function Home() {
   return (
     <>
+      <Loader />
       <Cursor />
       <ScrollRefresh />
       <div id="spotOverlay" aria-hidden="true" />
