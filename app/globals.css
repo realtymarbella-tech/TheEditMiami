@@ -20,3 +20,10 @@
 
 body { cursor: none; }
 @media (pointer: coarse) { body { cursor: auto; } }
+
+/* ══ SPOTLIGHT ══ */
+#spotOverlay { position: fixed; inset: 0; z-index: 150; background: rgba(8,8,7,.87); opacity: 0; pointer-events: none; transition: opacity 1.15s var(--ease-brand); }
+body.spot-on #spotOverlay { opacity: 1; }
+.spot-target { position: relative; transition: filter 1.15s var(--ease-brand); }
+.spot-target::before { content:''; position:absolute; inset:0; z-index:6; border:1px solid transparent; pointer-events:none; transition: border-color 1.15s var(--ease-brand); }
+.spot-target.spot-active { filter: brightness(1.07) saturate(1.05); z-index: 200; }
