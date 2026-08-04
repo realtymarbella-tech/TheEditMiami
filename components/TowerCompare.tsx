@@ -64,7 +64,7 @@ export default function TowerCompare() {
           <div key={t.key} data-tower onClick={(e) => { e.stopPropagation(); setActiveTower(activeTower === i ? null : i); }} className="group relative flex flex-col items-center justify-end h-full cursor-pointer">
 
             {/* Tooltip */}
-            <div className={`absolute bottom-[calc(100%+12px)] left-1/2 -translate-x-1/2 transition-all duration-300 bg-charcoal-950 text-cream px-5 py-3.5 min-w-[210px] text-left z-10 ${activeTower === i ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0"}`}>
+            <div className={`absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 transition-all duration-300 bg-charcoal-950 text-cream px-5 py-3.5 min-w-[210px] text-left z-10 ${activeTower === i ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0"}`}>
               <b className="block text-xs tracking-wide uppercase mb-1">{t.name}</b>
               {t.info.map((line, j) => (
                 <span key={j} className="block text-[11.5px] font-light text-charcoal-200 leading-relaxed">{line}</span>
