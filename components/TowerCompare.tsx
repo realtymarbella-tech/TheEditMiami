@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -14,6 +14,17 @@ const TOWERS = [
 export default function TowerCompare() {
   const containerRef = useRef<HTMLDivElement>(null);
   const pathRefs = useRef<(SVGPathElement | null)[]>([]);
+  const [activeTower, setActiveTower] = useState<number | null>(null);
+
+  useEffect(() => {
+    const close = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest("[data-tower]")) setActiveTower(null);
+    };
+    document.addEventListener("click", close);
+    document.addEventListener("scroll", () => setActiveTower(null), { passive: true });
+    return () => { document.removeEventListener("click", close); };
+  }, []);
 
   useEffect(() => {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -50,10 +61,10 @@ export default function TowerCompare() {
 
       <div ref={containerRef} className="flex items-end justify-center gap-7 md:gap-20 h-[340px] md:h-[480px] border-b border-charcoal-400 px-4">
         {TOWERS.map((t, i) => (
-          <div key={t.key} className="group relative flex flex-col items-center justify-end h-full cursor-pointer">
+          <div key={t.key} data-tower onClick={(e) => { e.stopPropagation(); setActiveTower(activeTower === i ? null : i); }} className="group relative flex flex-col items-center justify-end h-full cursor-pointer">
 
             {/* Tooltip */}
-            <div className="absolute bottom-[calc(100%+12px)] left-1/2 -translate-x-1/2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none bg-charcoal-950 text-cream px-5 py-3.5 min-w-[210px] text-left z-10">
+            <div className={`absolute bottom-[calc(100%+12px)] left-1/2 -translate-x-1/2 transition-all duration-300 bg-charcoal-950 text-cream px-5 py-3.5 min-w-[210px] text-left z-10 ${activeTower === i ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0"}`}>
               <b className="block text-xs tracking-wide uppercase mb-1">{t.name}</b>
               {t.info.map((line, j) => (
                 <span key={j} className="block text-[11.5px] font-light text-charcoal-200 leading-relaxed">{line}</span>
