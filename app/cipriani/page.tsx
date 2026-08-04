@@ -22,7 +22,7 @@ export default function CiprianiPage() {
         image="https://santamaria-collection.vercel.app/images/og/og-cipriani.jpg"
         price="1800000"
         address="1420 S Miami Ave"
-        numberOfRooms="1-4"
+        numberOfRooms="1"
       />
       <ProjectFicha
       slug="cipriani"

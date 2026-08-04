@@ -22,7 +22,7 @@ export default function DomusPage() {
         image="https://santamaria-collection.vercel.app/images/og/og-domus.jpg"
         price="500000"
         address="185 SW 7th St, Brickell"
-        numberOfRooms="Studio-2"
+        numberOfRooms="1"
       />
       <ProjectFicha
       slug="domus"

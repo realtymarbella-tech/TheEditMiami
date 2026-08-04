@@ -22,7 +22,7 @@ export default function EllePage() {
         image="https://santamaria-collection.vercel.app/images/og/og-elle.jpg"
         price="600000"
         address="2900 NE 7th Ave, Edgewater"
-        numberOfRooms="Studio-2"
+        numberOfRooms="1"
       />
       <ProjectFicha
       slug="elle"
