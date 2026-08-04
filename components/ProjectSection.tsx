@@ -17,6 +17,7 @@ interface Props {
   quote?: string;
   stats: Stat[];
   linkLabel: string;
+  linkHref: string;
   linkColor: string; // tailwind text-color class
   accentBorder: string; // tailwind border-color class for blockquote
   img: string;
@@ -149,7 +150,7 @@ export default function ProjectSection(p: Props) {
               <span key={l}>{i > 0 && <span className="mx-3">·</span>}{v} {l}</span>
             ))}
           </div>
-          <a href="#contacto" className={`text-[11.5px] font-medium tracking-wide uppercase pb-1.5 border-b border-current inline-block hover:opacity-55 transition-opacity ${p.linkColor}`}>{p.linkLabel}</a>
+          <a href={p.linkHref} className={`text-[11.5px] font-medium tracking-wide uppercase pb-1.5 border-b border-current inline-block hover:opacity-55 transition-opacity ${p.linkColor}`}>{p.linkLabel}</a>
         </div>
       </div>
     </section>

@@ -32,7 +32,8 @@ export default function Home() {
         body="La torre residencial más alta de Florida: Venecia sobre Biscayne Bay, firmada por Arquitectonica y 1508 London."
         quote={'"El verdadero estilo es singular y atemporal. Puede sentirse, pero no describirse." — Arrigo Cipriani'}
         stats={[["397", "residencias"], ["85", "plantas"], ["Brickell", ""], ["Verano 2027", ""]]}
-        linkLabel="Descubrir Cipriani"
+        linkLabel="Ver ficha completa →"
+        linkHref="/cipriani"
         linkColor="text-sunset-dk"
         accentBorder="border-sunset"
         img="/images/cipriani/home_cip.webp"
@@ -52,7 +53,8 @@ export default function Home() {
         tag="La primera ELLE Residences del mundo"
         body="La primera ELLE Residences del mundo: chic francés contemporáneo, entregada amueblada y lista para vivir."
         stats={[["180 unidades", ""], ["26 plantas", ""], ["Edgewater", ""], ["Entrega 2026", ""]]}
-        linkLabel="Experimentar Elle"
+        linkLabel="Ver ficha completa →"
+        linkHref="/elle"
         linkColor="text-flamingo-dk"
         accentBorder="border-flamingo"
         img="/images/elle/home_elle.webp"
@@ -71,7 +73,8 @@ export default function Home() {
         tag="Estilo de vida hotelero en el corazón de Brickell"
         body="579 flats amueblados con gestión hotelera y renta corta sin restricciones. Inversión llave en mano en Brickell."
         stats={[["579 unidades", ""], ["35 plantas", ""], ["Brickell", ""], ["Entrega 2028", ""]]}
-        linkLabel="Explorar Domus"
+        linkLabel="Ver ficha completa →"
+        linkHref="/domus"
         linkColor="text-aqua-dk"
         accentBorder="border-aqua"
         img="/images/domus/home_domus.webp"
