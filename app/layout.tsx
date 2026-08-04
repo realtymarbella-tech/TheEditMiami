@@ -16,6 +16,7 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://santamaria-collection.vercel.app"),
   title: "Santamaría Collection — Residencias de Lujo en Miami",
   description:
     "Cipriani Residences, Elle Residences y Domus Brickell. Tres desarrollos de nueva construcción curados para compradores internacionales. Desde $500K.",
