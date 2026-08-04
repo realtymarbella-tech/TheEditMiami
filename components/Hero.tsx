@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
+// El primer slide es el LCP — se preloaded en layout.tsx
 const SLIDES = [
   { img: "/images/cipriani/home_cip.webp", kb: "kb-panr" },
   { img: "/images/elle/home_elle.webp", kb: "kb-zoomout" },

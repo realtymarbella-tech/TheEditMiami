@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
@@ -127,7 +128,9 @@ export default function ProjectFicha(p: Props) {
             <p className="text-[15px] font-light leading-loose text-charcoal-200 mb-8">{p.units}</p>
             <div className="grid grid-cols-2 gap-2.5">
               {p.gallery.map((img, i) => (
-                <div key={i} className="aspect-[3/4] bg-cover bg-center" style={{ backgroundImage: `url(${img})` }} />
+                <div key={i} className="relative aspect-[3/4] overflow-hidden">
+                  <Image src={img} alt="" fill className="object-cover" sizes="(max-width:768px) 50vw, 25vw" loading="lazy" />
+                </div>
               ))}
               <div className="col-span-2 text-[10px] tracking-wide uppercase text-charcoal-400 mt-1">Galería completa disponible en el dossier privado</div>
             </div>
