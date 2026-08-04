@@ -5,11 +5,13 @@ import ProjectSection from "@/components/ProjectSection";
 import TowerCompare from "@/components/TowerCompare";
 import Dossier from "@/components/Dossier";
 import Footer from "@/components/Footer";
+import ScrollRefresh from "@/components/ScrollRefresh";
 
 export default function Home() {
   return (
     <>
       <Cursor />
+      <ScrollRefresh />
       <div id="spotOverlay" aria-hidden="true" />
       <Nav />
       <Hero />
