@@ -95,6 +95,22 @@ color:var(--sm-sub);white-space:nowrap}
 body.cur-big #cursorRing{width:72px;height:72px}
 @media(pointer:coarse){#cursor,#cursorRing{display:none}}
 body:not(.touch){cursor:none}
+
+/* ══ GRADING CÁLIDO — motion-video.css tokens ══ */
+.bg-fixed video{
+  filter:saturate(0.88) contrast(0.94) brightness(1.03) sepia(0.12);
+}
+.bg-fixed::after{
+  content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(180deg,
+      rgba(245,169,92,.14) 0%,
+      rgba(233,106,141,.06) 45%,
+      rgba(7,26,35,.42) 100%),
+    radial-gradient(120% 90% at 50% 42%,
+      transparent 40%,
+      rgba(7,26,35,.38) 100%);
+}
 </style>
 <meta name="description" content="La primera ELLE Residences del mundo. 180 residencias totalmente amuebladas en Edgewater. Chic francés contemporáneo. Desde $600K. Sin restricciones de alquiler.">
 <meta property="og:type" content="website">
