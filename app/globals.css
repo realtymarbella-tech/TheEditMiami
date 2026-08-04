@@ -1,26 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@keyframes kb-zoomin  { from{transform:scale(1.00) translate(0%,0%)}   to{transform:scale(1.12) translate(-2%,0%)} }
+@keyframes kb-zoomout { from{transform:scale(1.12) translate(0%,0%)}   to{transform:scale(1.00) translate(1%,0%)} }
+@keyframes kb-panr    { from{transform:scale(1.08) translate(-3%,0%)}  to{transform:scale(1.08) translate(3%,0%)} }
+@keyframes kb-panl    { from{transform:scale(1.08) translate(3%,0%)}   to{transform:scale(1.08) translate(-2%,0%)} }
+@keyframes kb-diag    { from{transform:scale(1.02) translate(-2%,-1%)} to{transform:scale(1.12) translate(1%,1%)} }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+.hero-slide { position:absolute; inset:-6%; background-size:cover; background-position:center; opacity:0; transition:opacity 1.6s ease-in-out; }
+.hero-slide.active { opacity:1; }
+.hero-slide.active.kb-zoomin  { animation: kb-zoomin  9s ease-in-out forwards; }
+.hero-slide.active.kb-zoomout { animation: kb-zoomout 9s ease-in-out forwards; }
+.hero-slide.active.kb-panr    { animation: kb-panr    9s ease-in-out forwards; }
+.hero-slide.active.kb-panl    { animation: kb-panl    9s ease-in-out forwards; }
+.hero-slide.active.kb-diag    { animation: kb-diag    9s ease-in-out forwards; }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+body { cursor: none; }
+@media (pointer: coarse) { body { cursor: auto; } }
