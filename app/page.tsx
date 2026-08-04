@@ -2,6 +2,9 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Cursor from "@/components/Cursor";
 import ProjectSection from "@/components/ProjectSection";
+import TowerCompare from "@/components/TowerCompare";
+import Dossier from "@/components/Dossier";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -77,9 +80,9 @@ export default function Home() {
         countLabel="flats"
       />
 
-      <section className="min-h-[50vh] flex items-center justify-center bg-cream text-charcoal-950">
-        <p className="font-serif italic text-2xl text-charcoal-500">— Comparador + Dossier + Footer: siguiente paso —</p>
-      </section>
+      <TowerCompare />
+      <Dossier />
+      <Footer />
     </>
   );
 }
