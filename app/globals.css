@@ -31,11 +31,14 @@
   --color-rose-lt: #FF8DA6;
   --color-rose-dk: #C94C72;
 
-  --font-serif: var(--font-cormorant), Georgia, serif;
-  --font-sans: var(--font-jost), sans-serif;
-
   --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* Fuentes fuera de @theme: next/font inyecta sus variables en <body> (runtime),
+   pero @theme se resuelve en :root (por encima de body) — las custom properties
+   de CSS no heredan hacia arriba, así que hay que resolverlas aquí en vez de en @theme. */
+.font-serif { font-family: var(--font-cormorant), Georgia, serif; }
+.font-sans  { font-family: var(--font-jost), sans-serif; }
 
 :root {
   --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
