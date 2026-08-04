@@ -39,7 +39,7 @@ export default function SchemaOrg(p: Props) {
     "about": {
       "@type": "Accommodation",
       "name": p.name,
-      "numberOfRooms": p.numberOfRooms,
+      "numberOfRooms": parseInt(p.numberOfRooms ?? "1"),
       "address": {
         "@type": "PostalAddress",
         "streetAddress": p.address,
