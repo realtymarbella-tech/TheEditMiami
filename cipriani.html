@@ -87,6 +87,14 @@ color:var(--sm-sub);white-space:nowrap}
 .sm-logo--nav{--sm-size:34px}
 .sm-logo--footer{--sm-size:44px;margin-bottom:14px}
 @media(max-width:640px){.sm-logo--footer{--sm-size:34px}}
+
+/* ══ CURSOR DOBLE ══ */
+#cursor,#cursorRing{position:fixed;top:0;left:0;pointer-events:none;z-index:998;border-radius:50%;transform:translate(-50%,-50%)}
+#cursor{width:8px;height:8px;background:var(--cream);mix-blend-mode:difference}
+#cursorRing{width:38px;height:38px;border:1px solid rgba(253,252,251,.55);mix-blend-mode:difference;transition:width .35s var(--ease),height .35s var(--ease)}
+body.cur-big #cursorRing{width:72px;height:72px}
+@media(pointer:coarse){#cursor,#cursorRing{display:none}}
+body:not(.touch){cursor:none}
 </style>
 <meta name="description" content="La primera residencia Cipriani en América. 85 plantas, 397 residencias, interiores de 1508 London. Desde $1.8M. Colección Canaletto hasta $30M.">
 <meta property="og:type" content="website">
@@ -104,13 +112,14 @@ color:var(--sm-sub);white-space:nowrap}
 <meta name="twitter:image" content="https://santamaria-collection.vercel.app/images/og/og-cipriani.jpg">
 </head>
 <body>
+<div id="cursor" aria-hidden="true"></div><div id="cursorRing" aria-hidden="true"></div>
 <div class="bg-fixed"><div class="poster"></div>
 <video muted loop playsinline preload="metadata" src="videos/cipriani.mp4"></video></div>
 <div class="bg-scrim"></div>
 <nav><a class="back" href="index.html">← Santamaría Collection</a><span class="sm-logo sm-logo--light sm-logo--nav" aria-label="Santamaría Collection">
 <span class="sm-logo__name">SANTAMARIA</span>
 <span class="sm-logo__rule-group" aria-hidden="true"><span class="sm-logo__rule"></span><span class="sm-logo__sub">COLLECTION</span><span class="sm-logo__rule"></span></span></span>
-<a class="nav-cta" href="#dossier">Dossier</a></nav>
+<a class="nav-cta magnetic" href="#dossier">Dossier</a></nav>
 <main>
 <section class="pw"><div class="panel">
 <div class="ov">N.º 01 — La ficha</div>
@@ -177,6 +186,31 @@ color:var(--sm-sub);white-space:nowrap}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.14/lenis.min.js"></script>
 <script>
+/* ══ CURSOR + MAGNÉTICOS ══ */
+(function(){
+  const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const isTouch=matchMedia('(pointer:coarse)').matches;
+  if(isTouch){document.body.classList.add('touch');return;}
+  if(reduced||typeof gsap==='undefined') return;
+  const dot=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+  if(dot&&ring){
+    const dx=gsap.quickTo(dot,'x',{duration:.12,ease:'power3'}),dy=gsap.quickTo(dot,'y',{duration:.12,ease:'power3'});
+    const rx=gsap.quickTo(ring,'x',{duration:.45,ease:'power3'}),ry=gsap.quickTo(ring,'y',{duration:.45,ease:'power3'});
+    addEventListener('mousemove',e=>{dx(e.clientX);dy(e.clientY);rx(e.clientX);ry(e.clientY);});
+    document.querySelectorAll('a,button').forEach(el=>{
+      el.addEventListener('mouseenter',()=>document.body.classList.add('cur-big'));
+      el.addEventListener('mouseleave',()=>document.body.classList.remove('cur-big'));
+    });
+  }
+  document.querySelectorAll('.magnetic').forEach(btn=>{
+    btn.addEventListener('mousemove',e=>{
+      const r=btn.getBoundingClientRect();
+      gsap.to(btn,{x:(e.clientX-r.left-r.width/2)*.28,y:(e.clientY-r.top-r.height/2)*.4,duration:.4,ease:'power3'});
+    });
+    btn.addEventListener('mouseleave',()=>gsap.to(btn,{x:0,y:0,duration:.65,ease:'elastic.out(1,.35)'}));
+  });
+})();
+
 function captureLead(d,origen){
   try{
     fetch('https://sqdvkfcghdjxtyuybxpy.supabase.co/rest/v1/leads',{
