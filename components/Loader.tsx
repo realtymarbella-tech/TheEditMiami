@@ -16,7 +16,7 @@ export default function Loader() {
     const tl = gsap.timeline({
       onComplete: () => {
         gsap.to(loaderRef.current, {
-          yPercent: -100, duration: 0.9, ease: "power4.inOut",
+          yPercent: -100, duration: 0.6, ease: "power4.inOut",
           onComplete: () => loaderRef.current?.remove(),
         });
       },
@@ -28,9 +28,9 @@ export default function Loader() {
     gsap.set(rule2Ref.current, { transformOrigin: "left" });
     gsap.set(subRef.current, { opacity: 0 });
 
-    tl.fromTo(logoRef.current, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" })
-      .to([rule1Ref.current, rule2Ref.current], { scaleX: 1, duration: 1.4, ease: "power2.inOut" }, "-=0.3")
-      .to(subRef.current, { opacity: 1, duration: 0.7, ease: "power2.out" }, "-=0.5");
+    tl.fromTo(logoRef.current, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" })
+      .to([rule1Ref.current, rule2Ref.current], { scaleX: 1, duration: 1.0, ease: "power2.inOut" }, "-=0.3")
+      .to(subRef.current, { opacity: 1, duration: 0.5, ease: "power2.out" }, "-=0.4");
   }, []);
 
   return (

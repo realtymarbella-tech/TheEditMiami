@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import * as THREE from "three";
+// Three.js se importa dinámicamente al entrar en viewport
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -55,6 +55,7 @@ export default function ProjectSection(p: Props) {
   const counterRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    (async () => {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
     const frame = frameRef.current;
     if (!frame) return;
@@ -64,9 +65,11 @@ export default function ProjectSection(p: Props) {
       return;
     }
 
+    // Importar Three.js solo cuando el frame entra en viewport
+    const THREE = await import("three");
     const canvas = document.createElement("canvas");
     canvas.style.cssText = "position:absolute;inset:0;width:100%;height:100%";
-    let renderer: THREE.WebGLRenderer;
+    let renderer: import("three").WebGLRenderer;
     try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true }); }
     catch { return; }
     frame.prepend(canvas);
@@ -74,7 +77,7 @@ export default function ProjectSection(p: Props) {
     const scene = new THREE.Scene();
     const cam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
     const uniforms = {
-      uTex: { value: null as THREE.Texture | null },
+      uTex: { value: null as import("three").Texture | null },
       uPlane: { value: new THREE.Vector2(1, 1) },
       uTexSize: { value: new THREE.Vector2(1, 1) },
       uFocus: { value: new THREE.Vector2(...p.focus) },
@@ -112,6 +115,7 @@ export default function ProjectSection(p: Props) {
     });
 
     return () => { cancelAnimationFrame(raf); trigger.kill(); removeEventListener("resize", resize); renderer.dispose(); };
+    })();
   }, [p.img, p.focus, p.glow, p.base, p.count]);
 
   useEffect(() => {
