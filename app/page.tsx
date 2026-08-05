@@ -1,7 +1,8 @@
 import ClientOnlyShell from "@/components/ClientOnlyShell";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import ProjectSection from "@/components/ProjectSection";
+import ProjectSection from "@/components/ProjectSectionWrapper";
+// Three.js (via ProjectSection) cargado lazy — fuera del bundle inicial from "@/components/ProjectSectionWrapper";
 import TowerCompare from "@/components/TowerCompare";
 import Dossier from "@/components/Dossier";
 import Footer from "@/components/Footer";
