@@ -1,19 +1,15 @@
+import ClientOnlyShell from "@/components/ClientOnlyShell";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Cursor from "@/components/Cursor";
 import ProjectSection from "@/components/ProjectSection";
 import TowerCompare from "@/components/TowerCompare";
 import Dossier from "@/components/Dossier";
 import Footer from "@/components/Footer";
-import ScrollRefresh from "@/components/ScrollRefresh";
-import Loader from "@/components/Loader";
 
 export default function Home() {
   return (
     <>
-      <Loader />
-      <Cursor />
-      <ScrollRefresh />
+      <ClientOnlyShell />
       <div id="spotOverlay" aria-hidden="true" />
       <Nav />
       <Hero />

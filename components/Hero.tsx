@@ -1,6 +1,7 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
+// gsap se importa dinámicamente para no bloquear el hilo principal
 
 // El primer slide es el LCP — se preloaded en layout.tsx
 const SLIDES = [
@@ -45,7 +46,18 @@ export default function Hero() {
     <header id="top" className="grid md:grid-cols-[55fr_45fr] pt-[72px] gap-0.5 bg-charcoal-950">
       <div className="relative overflow-hidden flex items-center min-h-[74vh] md:min-h-screen">
         {SLIDES.map((s, i) => (
-          <div key={i} className={`hero-slide ${s.kb} ${i === active ? "active" : ""}`} style={{ backgroundImage: `url(${s.img})` }} />
+          <div key={i} className={`hero-slide ${s.kb} ${i === active ? "active" : ""}`}>
+            {i === 0 ? (
+              <Image
+                src={s.img} alt="" fill
+                className="object-cover object-center"
+                priority fetchPriority="high"
+                sizes="(max-width:960px) 100vw, 55vw"
+              />
+            ) : (
+              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${s.img})` }} />
+            )}
+          </div>
         ))}
         <div className="absolute inset-0 z-[2]" style={{ background: "linear-gradient(92deg,rgba(18,18,16,.94) 0%,rgba(18,18,16,.86) 55%,rgba(18,18,16,.15) 100%),linear-gradient(to top,rgba(18,18,16,.6) 0%,transparent 30%)" }} />
         <div className="relative z-[3] px-6 md:px-16 flex flex-col gap-6 max-w-xl">
