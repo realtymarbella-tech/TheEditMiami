@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-const MEMBERS = [
-  { name: "Maribel Santamaría", location: "Miami", img: "/images/team/maribel.webp" },
-  { name: "Enrique Cortés", location: "Marbella", img: "/images/team/enrique.webp" },
+const MEMBERS: { name: string; title: string; location: string; img: string }[] = [
+  { name: "Maribel Santamaría", title: "Chief Executive", location: "Miami", img: "/images/team/maribel.webp" },
+  { name: "Enrique Cortés", title: "Chief Executive", location: "Marbella", img: "/images/team/enrique.webp" },
 ];
 
 export default function Team() {
@@ -25,7 +25,7 @@ export default function Team() {
         <div className="grid grid-cols-2 gap-6 md:gap-12 max-w-lg">
           {MEMBERS.map((m) => (
             <div key={m.name} className="flex flex-col gap-4">
-              <div className="relative aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
                   src={m.img} alt={m.name} fill
                   className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
@@ -34,6 +34,7 @@ export default function Team() {
               </div>
               <div>
                 <div className="font-serif text-lg font-light text-cream">{m.name}</div>
+                <div className="text-[10.5px] tracking-[0.14em] uppercase text-charcoal-400 mt-0.5">{m.title}</div>
                 <div className="text-[10.5px] tracking-[0.18em] uppercase text-rose-lt mt-0.5">{m.location}</div>
               </div>
             </div>
