@@ -5,6 +5,7 @@ import ProjectSection from "@/components/ProjectSectionWrapper";
 // Three.js (via ProjectSection) cargado lazy — fuera del bundle inicial from "@/components/ProjectSectionWrapper";
 import TowerCompare from "@/components/TowerCompare";
 import Dossier from "@/components/Dossier";
+import Team from "@/components/Team";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -85,6 +86,7 @@ export default function Home() {
       />
 
       <TowerCompare />
+      <Team />
       <Dossier />
       <Footer />
     </>
