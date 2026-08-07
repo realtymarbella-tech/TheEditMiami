@@ -32,7 +32,7 @@ export default function CiprianiPage() {
       num="N.º 01"
       name="Cipriani\nResidences Miami"
       tag="La torre residencial más alta al sur de Nueva York está emergiendo en Miami"
-      price="Desde $1.8M USD · Penthouses Canaletto hasta $30M+"
+      price="At 950 feet, Cipriani Residences Miami doesn't just offer a home—it establishes your place in the most exlcuisve skyline in America"
       vision="En 1931, Giuseppe Cipriani abrió Harry's Bar en Venecia. Casi un siglo después, la cuarta generación de la familia firma su primera residencia construida desde cero en América: 85 plantas que convierten la hospitalidad veneciana en una forma de vivir. No es una torre con un restaurante — es el servicio Cipriani como arquitectura, con la estructura ya completada y cerca del 80% de sus residencias vendidas a compradores de más de 30 países."
       quote='"El verdadero estilo es singular y atemporal. Puede sentirse, pero no describirse." — Arrigo Cipriani'
       stats={[["950 ft","Altura"],["85","Plantas"],["397","Residencias"],["Verano 2027","Entrega"]]}
