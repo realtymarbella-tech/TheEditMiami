@@ -44,7 +44,7 @@ export default function EllePage() {
       video="/videos/elle.mp4"
       poster="/images/elle/poster_elle.webp"
       gallery={["/images/elle/living.webp","/images/elle/dining.webp","/images/elle/pool.webp","/images/elle/view25.webp"]}
-      other={[{slug:"cipriani",name:"Cipriani Residences"},{slug:"domus",name:"Domus Brickell"}]}
+      other={[{slug:"cipriani-residences",name:"Cipriani Residences"},{slug:"domus",name:"Domus Brickell"}]}
     />
     </>
   );

@@ -33,7 +33,7 @@ export default function Home() {
         quote={'"El verdadero estilo es singular y atemporal. Puede sentirse, pero no describirse." — Arrigo Cipriani'}
         stats={[["397", "residencias"], ["85", "plantas"], ["Brickell", ""], ["Verano 2027", ""]]}
         linkLabel="Ver ficha completa →"
-        linkHref="/cipriani"
+        linkHref="/cipriani-residences"
         linkColor="text-sunset-dk"
         accentBorder="border-sunset"
         img="/images/cipriani/home_cip.webp"
