@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import ScrollText from "@/components/ScrollText";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -151,7 +152,7 @@ export default function CiprianiResidences() {
               <div>
                 <div className="text-[10.5px] font-medium tracking-[0.26em] uppercase text-sunset mb-4">{p.label}</div>
                 <h3 className="font-serif text-2xl md:text-3xl font-light mb-5">{p.title}</h3>
-                <p className="text-[14.5px] font-light leading-loose text-charcoal-200">{p.body}</p>
+                <ScrollText text={p.body} className="text-[14.5px] font-light leading-loose" accentColor="#FDFCFB" dimColor="rgba(253,252,251,0.18)" />
               </div>
             </div>
           </section>

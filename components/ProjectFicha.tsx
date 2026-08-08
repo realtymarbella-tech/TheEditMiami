@@ -1,4 +1,5 @@
 "use client";
+import ScrollText from "@/components/ScrollText";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
@@ -112,7 +113,7 @@ export default function ProjectFicha(p: Props) {
           <div className="max-w-2xl mx-auto panel">
             <div className="text-[11px] font-medium tracking-[0.28em] uppercase mb-4" style={{ color: p.accent }}>La visión</div>
             <h2 className="font-serif text-3xl md:text-4xl font-light mb-6">Por qué existe</h2>
-            <p className="text-[15px] font-light leading-loose text-charcoal-200">{p.vision}</p>
+            <p className="text-[15px] font-light leading-loose text-charcoal-200"><ScrollText text={p.vision} accentColor="#FDFCFB" dimColor="rgba(253,252,251,0.18)" /></p>
             {p.quote && <blockquote className="font-serif italic text-xl font-light text-cream border-l-2 pl-5 mt-8 leading-snug" style={{ borderColor: p.accent }}>{p.quote}</blockquote>}
           </div>
         </section>
@@ -123,7 +124,7 @@ export default function ProjectFicha(p: Props) {
             <div className="max-w-2xl mx-auto panel">
               <div className="text-[11px] font-medium tracking-[0.28em] uppercase mb-4" style={{ color: p.accent }}>{sec.overline}</div>
               <h2 className="font-serif text-3xl md:text-4xl font-light mb-6">{sec.title}</h2>
-              <p className="text-[15px] font-light leading-loose text-charcoal-200 whitespace-pre-line">{sec.body}</p>
+              <p className="text-[15px] font-light leading-loose text-charcoal-200"><ScrollText text={sec.body} accentColor="#FDFCFB" dimColor="rgba(253,252,251,0.18)" /></p>
             </div>
           </section>
         ))}
@@ -147,7 +148,7 @@ export default function ProjectFicha(p: Props) {
           <div className="max-w-2xl mx-auto panel">
             <div className="text-[11px] font-medium tracking-[0.28em] uppercase mb-4" style={{ color: p.accent }}>Las residencias</div>
             <h2 className="font-serif text-3xl md:text-4xl font-light mb-6">Cómo se entregan</h2>
-            <p className="text-[15px] font-light leading-loose text-charcoal-200 mb-8">{p.units}</p>
+            <p className="text-[15px] font-light leading-loose text-charcoal-200 mb-8"><ScrollText text={p.units} accentColor="#FDFCFB" dimColor="rgba(253,252,251,0.18)" /></p>
             <div className="grid grid-cols-2 gap-2.5">
               {p.gallery.map((img, i) => (
                 <div key={i} className="relative aspect-[3/4] overflow-hidden">
@@ -179,7 +180,7 @@ export default function ProjectFicha(p: Props) {
           <div className="max-w-2xl mx-auto panel">
             <div className="text-[11px] font-medium tracking-[0.28em] uppercase mb-4" style={{ color: p.accent }}>La ubicación</div>
             <h2 className="font-serif text-3xl md:text-4xl font-light mb-6">El barrio</h2>
-            <p className="text-[15px] font-light leading-loose text-charcoal-200">{p.location}</p>
+            <p className="text-[15px] font-light leading-loose text-charcoal-200"><ScrollText text={p.location} accentColor="#FDFCFB" dimColor="rgba(253,252,251,0.18)" /></p>
           </div>
         </section>
 
