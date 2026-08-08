@@ -273,20 +273,7 @@ export default function CiprianiResidences() {
           </div>
         </section>
 
-        {/* SEC 9 — TESTIMONIOS */}
-        <section className="px-6 md:px-16 py-24 bg-ocean">
-          <div className="max-w-2xl mx-auto cip-panel text-center">
-            <div className="text-[10.5px] font-medium tracking-[0.26em] uppercase text-sunset mb-10">Lo que dicen</div>
-            <blockquote className="font-serif italic text-xl font-light leading-relaxed text-cream mb-4">
-              &quot;He vivido en propiedades Cipriani en Venecia y Nueva York. Esta es la primera vez que siento ese mismo cuidado en un contexto residencial. No es solo una dirección — es la decisión de vivir de una manera determinada.&quot;
-            </blockquote>
-            <div className="text-[12px] tracking-wide text-charcoal-400 mb-16">— Patricia Rossi, Propietaria, Rossi Ventures · Milán, Nueva York, Miami</div>
-            <blockquote className="font-serif italic text-xl font-light leading-relaxed text-cream mb-4">
-              &quot;Visitamos Miami como turistas. Nos alojamos en el resort Cipriani. Cuando supimos que habría una torre residencial... era inevitable.&quot;
-            </blockquote>
-            <div className="text-[12px] tracking-wide text-charcoal-400">— James &amp; Elizabeth Chen, Coleccionistas y filántropos · Hong Kong → Miami</div>
-          </div>
-        </section>
+
 
         {/* SEC 10 — DOSSIER FINAL */}
         <section id="dossier" className="px-6 md:px-16 py-24 bg-charcoal-950">
