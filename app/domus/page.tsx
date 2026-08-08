@@ -44,7 +44,7 @@ export default function DomusPage() {
       video="/videos/domus.mp4"
       poster="/images/domus/home_domus.webp"
       gallery={["/images/domus/rooftop.webp","/images/domus/interior.webp","/images/domus/winebar.webp","/images/domus/peacock.webp"]}
-      other={[{slug:"cipriani-residences",name:"Cipriani Residences"},{slug:"elle",name:"Elle Residences"}]}
+      other={[{slug:"cipriani-residences",name:"Cipriani Residences"},{slug:"elle-residences-miami",name:"Elle Residences"}]}
     />
     </>
   );
