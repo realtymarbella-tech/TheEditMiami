@@ -1,30 +1,31 @@
 "use client";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 interface Props {
   currentLocale: string;
-  label: string; // "EN" o "ES"
+  label: string;
 }
 
 export default function LocaleSwitcher({ currentLocale, label }: Props) {
-  const router = useRouter();
   const pathname = usePathname();
+  const router = useRouter();
 
   const toggle = () => {
-    const next = currentLocale === "es" ? "en" : "es";
-    // Guardar preferencia via query param (recogido por middleware)
-    const url = new URL(window.location.href);
-    url.searchParams.set("locale", next);
-    // Redirigir para que el middleware guarde la cookie
-    router.push(url.toString());
-    router.refresh();
+    if (currentLocale === "es") {
+      // ES → EN: añadir /en al principio
+      router.push(`/en${pathname === "/" ? "" : pathname}`);
+    } else {
+      // EN → ES: quitar /en del principio
+      const newPath = pathname.replace(/^\/en/, "") || "/";
+      router.push(newPath);
+    }
   };
 
   return (
     <button
       onClick={toggle}
       className="text-xs font-medium tracking-wide text-charcoal-200 hover:text-cream transition-colors border border-white/20 px-3 py-1.5"
-      aria-label={`Switch to ${label}`}
+      aria-label={`Switch language to ${label}`}
     >
       {label}
     </button>
