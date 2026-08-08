@@ -36,14 +36,6 @@ const MOMENTS = [
   { time: "Noche", text: `El Director de Residencias llama a su móvil. "Buenas noches. Su cena Cipriani en casa está lista. El chef sugiere la lubina esta noche — llegó esta mañana desde—" Usted ya está en casa. La mesa está puesta. La luz de Biscayne Bay ilumina la cubertería. Algunas direcciones cambian su vida. Esta pasa a formar parte de ella.` },
 ];
 
-const COMPARE = [
-  ["Legado de marca", "95 años (Harry's Bar, 1931)", "Automotriz (primer hogar: 2015)", "Bienes de lujo (licencia de marca)"],
-  ["Altura definitiva", "950 ft — la cumbre", "817 ft", "~700 ft"],
-  ["Experiencia residencial", "Restaurante Cipriani + catering 24h", "Concierge de marca, sin F&B integrado", "Amenidades estilo hotel"],
-  ["Interiorismo", "1508 London — visión independiente", "Branding arquitectónico", "Firma de diseño genérica"],
-  ["Ubicación", "Corazón de Brickell", "Borde de la bahía, zona turística", "Residencial mixto"],
-  ["Para quién", "Coleccionista de experiencias culturales", "Entusiasta del motor que busca residencia", "Aficionado a la marca de lujo"],
-];
 
 const COLLECTIONS = [
   { name: "Residencia Estándar", sub: "1–4 habitaciones · Desde $1.8M USD",
@@ -195,34 +187,6 @@ export default function CiprianiResidences() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* SEC 6 — COMPARATIVA */}
-        <section className="px-6 md:px-16 py-24 bg-charcoal-950 overflow-x-auto">
-          <div className="max-w-4xl mx-auto cip-panel">
-            <div className="text-[10.5px] font-medium tracking-[0.26em] uppercase text-sunset mb-5 text-center">La diferencia</div>
-            <h2 className="font-serif text-3xl md:text-4xl font-light mb-12 text-center">Cipriani frente al resto</h2>
-            <table className="w-full min-w-[640px] text-left border-collapse">
-              <thead>
-                <tr className="border-b border-white/15">
-                  <th className="py-3 pr-4 text-[10.5px] tracking-widest uppercase text-charcoal-400 font-normal"></th>
-                  <th className="py-3 px-4 text-[11px] tracking-widest uppercase text-sunset font-medium">Cipriani</th>
-                  <th className="py-3 px-4 text-[11px] tracking-widest uppercase text-charcoal-400 font-normal">Aston Martin</th>
-                  <th className="py-3 px-4 text-[11px] tracking-widest uppercase text-charcoal-400 font-normal">Baccarat</th>
-                </tr>
-              </thead>
-              <tbody>
-                {COMPARE.map(([label, cip, am, bac]) => (
-                  <tr key={label} className="border-b border-white/10">
-                    <td className="py-4 pr-4 text-[11px] tracking-wide uppercase text-charcoal-400 align-top">{label}</td>
-                    <td className="py-4 px-4 text-[13.5px] font-light text-cream align-top">{cip}</td>
-                    <td className="py-4 px-4 text-[13.5px] font-light text-charcoal-400 align-top">{am}</td>
-                    <td className="py-4 px-4 text-[13.5px] font-light text-charcoal-400 align-top">{bac}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         </section>
 
