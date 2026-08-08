@@ -152,7 +152,7 @@ export default function ProjectFicha(p: Props) {
             <div className="grid grid-cols-2 gap-2.5">
               {p.gallery.map((img, i) => (
                 <div key={i} className="relative aspect-[3/4] overflow-hidden">
-                  <Image src={img} alt="" fill className="object-cover" sizes="(max-width:768px) 50vw, 25vw" loading="lazy" />
+                  <Image src={img} alt={`${p.name.replace("\n"," ")} — imagen ${i + 1}`} fill className="object-cover" sizes="(max-width:768px) 50vw, 25vw" loading="lazy" />
                 </div>
               ))}
               <div className="col-span-2 text-[10px] tracking-wide uppercase text-charcoal-400 mt-1">Galería completa disponible en el dossier privado</div>

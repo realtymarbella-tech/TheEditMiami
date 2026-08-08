@@ -3,6 +3,7 @@ import ProjectFicha from "@/components/ProjectFicha";
 import SchemaOrg from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.santamaria-collection.com/elle-residences-miami" },
   title: "Elle Residences Miami | La Primera ELLE del Mundo | Desde $600K | Santamaría Collection",
   description: "180 residencias completamente amuebladas y listas para vivir en Edgewater, Miami. Chic francés contemporáneo, sin restricciones de alquiler. Desde $600K. Entrega 2026.",
   openGraph: {

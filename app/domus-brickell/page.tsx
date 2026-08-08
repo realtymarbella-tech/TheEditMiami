@@ -3,6 +3,7 @@ import ProjectFicha from "@/components/ProjectFicha";
 import SchemaOrg from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.santamaria-collection.com/domus-brickell" },
   title: "Domus Brickell Miami | Tu Santuario en el Corazón de la Ciudad | Desde $500K",
   description: "579 FLATS amueblados en Brickell. Diseño zen, renta corta sin restricciones, gestión hotelera profesional. Retorno desde el primer día. Desde $500K. Entrega 2028.",
   openGraph: {

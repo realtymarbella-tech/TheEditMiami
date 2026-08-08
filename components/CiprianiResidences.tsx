@@ -225,7 +225,7 @@ export default function CiprianiResidences() {
             <div className="grid sm:grid-cols-2 gap-4">
               {AMENITIES.map((a) => (
                 <div key={a.title} className="relative aspect-[4/3] overflow-hidden group">
-                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${a.img})` }} />
+                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${a.img})` }} aria-label={a.title} />
                   <div className="absolute inset-0" style={{ background: "linear-gradient(to top,rgba(8,8,7,.92) 0%,rgba(8,8,7,.2) 55%,transparent 80%)" }} />
                   <div className="absolute bottom-0 p-5">
                     <div className="font-serif text-lg font-light text-cream">{a.title}</div>

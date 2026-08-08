@@ -3,6 +3,7 @@ import CiprianiResidences from "@/components/CiprianiResidences";
 import SchemaOrg from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.santamaria-collection.com/cipriani-residences" },
   title: "Cipriani Residences Miami | La Torre Más Alta al Sur de NYC | Desde $1.8M",
   description: "950 pies. 85 plantas. 397 residencias. La primera Cipriani residencial en América, diseñada por Arquitectonica con interiores de 1508 London. Desde $1.8M, Canaletto desde $4.1M.",
   openGraph: {
