@@ -59,12 +59,15 @@
 .hero-slide.active.kb-diag    { animation: kb-diag    9s ease-in-out forwards; }
 
 body { cursor: none; }
-body:not(.loaded) main,
-body:not(.loaded) nav,
-body:not(.loaded) header { opacity: 0; }
+body:not(.loaded):not(.no-loader) main,
+body:not(.loaded):not(.no-loader) nav,
+body:not(.loaded):not(.no-loader) header { opacity: 0; }
 body.loaded main,
 body.loaded nav,
-body.loaded header { opacity: 1; transition: opacity 0.3s ease; }
+body.loaded header,
+body.no-loader main,
+body.no-loader nav,
+body.no-loader header { opacity: 1; transition: opacity 0.3s ease; }
 @media (pointer: coarse) { body { cursor: auto; } }
 
 /* ══ SPOTLIGHT ══ */

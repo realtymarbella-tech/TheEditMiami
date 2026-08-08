@@ -61,6 +61,7 @@ export default function CiprianiResidences() {
   const [sent, setSent] = useState(false);
 
   useEffect(() => {
+    document.body.classList.add("no-loader");
     const v = videoRef.current;
     if (v) {
       v.addEventListener("canplay", () => { v.play().catch(() => {}); v.style.opacity = "1"; }, { once: true });
