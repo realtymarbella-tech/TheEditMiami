@@ -11,13 +11,16 @@ export default function Loader() {
 
   useEffect(() => {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) { loaderRef.current?.remove(); return; }
+    if (reduced) { loaderRef.current?.remove(); document.body.classList.add('loaded'); return; }
 
     const tl = gsap.timeline({
       onComplete: () => {
         gsap.to(loaderRef.current, {
           yPercent: -100, duration: 0.6, ease: "power4.inOut",
-          onComplete: () => loaderRef.current?.remove(),
+          onComplete: () => {
+            loaderRef.current?.remove();
+            document.body.classList.add("loaded");
+          },
         });
       },
     });
