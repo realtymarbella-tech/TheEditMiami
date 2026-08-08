@@ -1,6 +1,13 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./i18n.ts");
 
 const nextConfig: NextConfig = {
+  images: {
+    formats: ["image/webp", "image/avif"],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+  },
   async redirects() {
     return [
       { source: "/cipriani", destination: "/cipriani-residences", permanent: true },
@@ -8,11 +15,6 @@ const nextConfig: NextConfig = {
       { source: "/domus", destination: "/domus-brickell", permanent: true },
     ];
   },
-  images: {
-    formats: ["image/webp", "image/avif"],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
-  },
-  /* config options here */
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

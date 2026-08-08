@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "back": "← Santamaría Collection",
+    "cipriani": "Cipriani",
+    "elle": "Elle Residences",
+    "domus": "Domus Brickell",
+    "compare": "Compare",
+    "access": "Private Access",
+    "dossier": "Dossier",
+    "lang": "ES"
+  },
+  "hero": {
+    "eyebrow": "Curated ultra-luxury residences",
+    "h1_1": "The new",
+    "h1_2": "standard",
+    "h1_3": "of",
+    "h1_4": "high design",
+    "h1_5": "in Miami.",
+    "sub": "Three developments selected from everything being built today in Brickell and Edgewater. Only the exceptional.",
+    "cta_primary": "Request dossier",
+    "cta_secondary": "View the collection",
+    "card_cipriani_meta": "Brickell · Italian Legacy",
+    "card_elle_meta": "Edgewater · Haute Couture",
+    "card_domus_meta": "Brickell · Flexible Investment"
+  },
+  "stats": {
+    "developments": "Curated developments",
+    "residences": "Residences",
+    "tallest": "Florida's tallest residential tower",
+    "entry": "Starting price"
+  },
+  "compare": {
+    "overline": "The collection, to scale",
+    "h2": "Three towers.",
+    "h2_em": "One city.",
+    "sub": "Silhouettes proportionally scaled to each development's actual height. Hover over each tower.",
+    "elle_info": "26 floors · ~300 ft\nEdgewater · From $600K\nDelivery 2026",
+    "cip_info": "85 floors · 950 ft\nFlorida's tallest residential tower\nBrickell · From $1.8M",
+    "dom_info": "35 floors · ~400 ft\nBrickell · From $500K\nDelivery 2028"
+  },
+  "team": {
+    "overline": "Who we are",
+    "h2_1": "The difference between",
+    "h2_em": "buying and getting it right.",
+    "p1": "We have spent over a decade in the luxury markets of Marbella, Miami, and New York — long enough to know that the most expensive mistake is not overpaying for a property, but choosing the wrong one.",
+    "p2": "Santamaría Collection was born from a conviction: the international buyer deserves a curator, not a catalog. That is why we do not present everything being built in Miami.",
+    "p2_em": "Only what we would buy ourselves.",
+    "enrique_title": "Chief Executive",
+    "maribel_title": "Chief Executive"
+  },
+  "dossier": {
+    "overline": "Private access",
+    "h2": "Request your",
+    "h2_em": "private",
+    "h2_rest": "dossier",
+    "sub": "Pricing, floor plans, and updated availability for all three developments, directly from the developer's inventory.",
+    "nombre": "First name",
+    "apellidos": "Last name",
+    "email": "Email",
+    "telefono": "Phone / WhatsApp",
+    "proyecto_placeholder": "Development of interest",
+    "opt_cip": "Cipriani Residences Miami",
+    "opt_elle": "Elle Residences Miami",
+    "opt_domus": "Domus Brickell",
+    "opt_all": "All three — complete dossier",
+    "cta": "Request via WhatsApp",
+    "reply": "Response within 24h · Also by email:",
+    "thanks": "Thank you. Complete the message in WhatsApp — we will respond within 24 hours.",
+    "wa_msg": "Hello, I would like to request the private dossier for Santamaría Collection.\nName: {nombre} {apellidos}\nEmail: {email}\nPhone: {telefono}\nDevelopment: {proyecto}"
+  },
+  "footer": {
+    "tagline": "An editorial selection of new construction residences in Miami. Curated for those who know the difference.",
+    "collection": "Collection",
+    "contact": "Contact",
+    "compare": "Compare towers",
+    "legal": "© 2026 Santamaría Collection. All rights reserved. Images are artistic representations for illustrative purposes only. Prices, timelines, and specifications subject to change without notice. This is not an offer to sell where prohibited by law. Equal housing opportunity."
+  },
+  "projects": {
+    "from": "From",
+    "view": "View full profile →"
+  }
+}

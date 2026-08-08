@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "back": "← Santamaría Collection",
+    "cipriani": "Cipriani",
+    "elle": "Elle Residences",
+    "domus": "Domus Brickell",
+    "compare": "Comparar",
+    "access": "Acceso Privado",
+    "dossier": "Dossier",
+    "lang": "EN"
+  },
+  "hero": {
+    "eyebrow": "Residencias ultra-luxury curadas",
+    "h1_1": "El nuevo",
+    "h1_2": "estándar",
+    "h1_3": "del",
+    "h1_4": "alto diseño",
+    "h1_5": "en Miami.",
+    "sub": "Tres desarrollos escogidos entre todo lo que se construye hoy en Brickell y Edgewater. Solo lo excepcional.",
+    "cta_primary": "Solicitar dossier",
+    "cta_secondary": "Ver la colección",
+    "card_cipriani_meta": "Brickell · Legado Italiano",
+    "card_elle_meta": "Edgewater · Alta Costura",
+    "card_domus_meta": "Brickell · Inversión Flexible"
+  },
+  "stats": {
+    "developments": "Desarrollos curados",
+    "residences": "Residencias",
+    "tallest": "La torre más alta de Florida",
+    "entry": "Precio de entrada"
+  },
+  "compare": {
+    "overline": "La colección, a escala real",
+    "h2": "Tres torres.",
+    "h2_em": "Una ciudad.",
+    "sub": "Siluetas a escala proporcional según la altura real de cada desarrollo. Pase el cursor sobre cada torre.",
+    "elle_info": "26 plantas · ~300 ft\nEdgewater · Desde $600K\nEntrega 2026",
+    "cip_info": "85 plantas · 950 ft\nLa torre residencial más alta de Florida\nBrickell · Desde $1.8M",
+    "dom_info": "35 plantas · ~400 ft\nBrickell · Desde $500K\nEntrega 2028"
+  },
+  "team": {
+    "overline": "Quiénes somos",
+    "h2_1": "La diferencia entre",
+    "h2_em": "comprar y acertar.",
+    "p1": "Llevamos más de una década en los mercados de lujo de Marbella, Miami y Nueva York — suficiente tiempo para saber que el error más costoso no es pagar de más por una propiedad, sino elegir la equivocada.",
+    "p2": "Santamaría Collection nació de una convicción: el comprador internacional merece un criterio, no un catálogo. Por eso no presentamos todo lo que se construye en Miami.",
+    "p2_em": "Solo lo que nosotros mismos compraríamos.",
+    "enrique_title": "Chief Executive",
+    "maribel_title": "Chief Executive"
+  },
+  "dossier": {
+    "overline": "Acceso privado",
+    "h2": "Solicite el",
+    "h2_em": "dossier",
+    "h2_rest": "privado",
+    "sub": "Precios, planos y disponibilidad actualizada de los tres desarrollos, directamente del inventario del desarrollador.",
+    "nombre": "Nombre",
+    "apellidos": "Apellidos",
+    "email": "Email",
+    "telefono": "Teléfono / WhatsApp",
+    "proyecto_placeholder": "Proyecto de interés",
+    "opt_cip": "Cipriani Residences Miami",
+    "opt_elle": "Elle Residences Miami",
+    "opt_domus": "Domus Brickell",
+    "opt_all": "Los tres — dossier completo",
+    "cta": "Solicitar por WhatsApp",
+    "reply": "Respuesta en menos de 24h · También por email:",
+    "thanks": "Gracias. Complete el envío en WhatsApp — responderemos en menos de 24h.",
+    "wa_msg": "Hola, solicito el dossier privado de Santamaría Collection.\nNombre: {nombre} {apellidos}\nEmail: {email}\nTeléfono: {telefono}\nProyecto: {proyecto}"
+  },
+  "footer": {
+    "tagline": "Selección editorial de residencias de nueva construcción en Miami. Curadas para quienes conocen la diferencia.",
+    "collection": "Colección",
+    "contact": "Contacto",
+    "compare": "Comparar torres",
+    "legal": "© 2026 Santamaría Collection. Todos los derechos reservados. Las imágenes son representaciones artísticas con fines ilustrativos. Precios, plazos y especificaciones sujetos a cambios sin previo aviso. Esta no es una oferta de venta donde la ley lo prohíba. Igualdad de oportunidades en vivienda."
+  },
+  "projects": {
+    "from": "Desde",
+    "view": "Ver ficha completa →"
+  }
+}
