@@ -81,7 +81,7 @@ export default function Page() {
         poster="/images/elle/poster_elle.webp"
         gallery={["/images/elle/living.webp","/images/elle/dining.webp","/images/elle/pool.webp","/images/elle/view25.webp"]}
         extraSections={EXTRA}
-        other={[{slug:"cipriani-residences",name:"Cipriani Residences"},{slug:"domus",name:"Domus Brickell"}]}
+        other={[{slug:"cipriani-residences",name:"Cipriani Residences"},{slug:"domus-brickell",name:"Domus Brickell"}]}
       />
     </>
   );

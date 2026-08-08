@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     return [
       { source: "/cipriani", destination: "/cipriani-residences", permanent: true },
       { source: "/elle", destination: "/elle-residences-miami", permanent: true },
+      { source: "/domus", destination: "/domus-brickell", permanent: true },
     ];
   },
   images: {

@@ -74,7 +74,7 @@ export default function Home() {
         body="579 flats amueblados con gestión hotelera y renta corta sin restricciones. Inversión llave en mano en Brickell."
         stats={[["579 unidades", ""], ["35 plantas", ""], ["Brickell", ""], ["Entrega 2028", ""]]}
         linkLabel="Ver ficha completa →"
-        linkHref="/domus"
+        linkHref="/domus-brickell"
         linkColor="text-aqua-dk"
         accentBorder="border-aqua"
         img="/images/domus/home_domus.webp"
