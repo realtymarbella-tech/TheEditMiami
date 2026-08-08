@@ -33,8 +33,8 @@ export default function Page() {
       <SchemaOrg
         name="Domus Brickell"
         description="579 FLATS amueblados en Brickell, Miami. Renta corta sin restricciones, gestión hotelera profesional. Desde $500K."
-        url="https://santamaria-collection.vercel.app/domus-brickell"
-        image="https://santamaria-collection.vercel.app/images/og/og-domus.jpg"
+        url="https://www.santamaria-collection.com/domus-brickell"
+        image="https://www.santamaria-collection.com/images/og/og-domus.jpg"
         price="500000"
         address="185 SW 7th St, Brickell"
         numberOfRooms="1"

@@ -30,9 +30,9 @@ export default function Nav() {
         </span>
       </a>
       <div className="hidden md:flex gap-8 flex-1 justify-end items-center">
-        <a href="#cipriani" className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">Cipriani</a>
-        <a href="#elle" className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">Elle Residences</a>
-        <a href="#domus" className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">Domus Brickell</a>
+        <a href="/cipriani-residences" className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">Cipriani</a>
+        <a href="/elle-residences-miami" className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">Elle Residences</a>
+        <a href="/domus-brickell" className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">Domus Brickell</a>
         <a href="#comparar" className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">Comparar</a>
         <span className="w-px h-5 bg-white/20" />
         <a ref={btnRef} href="#contacto" className="text-xs font-medium tracking-wide bg-rose-lt text-ocean px-6 py-3 hover:bg-rose-dk transition-colors">Acceso Privado</a>

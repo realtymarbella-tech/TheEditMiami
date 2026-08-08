@@ -39,8 +39,8 @@ export default function Page() {
       <SchemaOrg
         name="Elle Residences Miami"
         description="Las primeras residencias ELLE del mundo. 180 unidades totalmente amuebladas en Edgewater, Miami. Desde $600K."
-        url="https://santamaria-collection.vercel.app/elle-residences-miami"
-        image="https://santamaria-collection.vercel.app/images/og/og-elle.jpg"
+        url="https://www.santamaria-collection.com/elle-residences-miami"
+        image="https://www.santamaria-collection.com/images/og/og-elle.jpg"
         price="600000"
         address="600 NE 36th Street, Edgewater"
         numberOfRooms="1"

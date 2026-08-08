@@ -24,7 +24,7 @@ export default function SchemaOrg(p: Props) {
       "seller": {
         "@type": "RealEstateAgent",
         "name": "Santamaría Collection",
-        "url": "https://santamaria-collection.vercel.app",
+        "url": "https://www.santamaria-collection.com",
         "telephone": "+34610589716",
         "email": "info@santamaria-collection.com",
         "address": {

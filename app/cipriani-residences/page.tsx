@@ -18,8 +18,8 @@ export default function Page() {
       <SchemaOrg
         name="Cipriani Residences Miami"
         description="La primera residencia Cipriani construida desde cero en América. 85 plantas, 950 pies, 397 residencias diseñadas por Arquitectonica con interiores de 1508 London."
-        url="https://santamaria-collection.vercel.app/cipriani-residences"
-        image="https://santamaria-collection.vercel.app/images/og/og-cipriani.jpg"
+        url="https://www.santamaria-collection.com/cipriani-residences"
+        image="https://www.santamaria-collection.com/images/og/og-cipriani.jpg"
         price="1800000"
         address="1420 S Miami Ave"
         numberOfRooms="1"

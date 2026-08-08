@@ -15,9 +15,9 @@ export default function Footer() {
         </div>
         <div>
           <h5 className="text-[10.5px] font-medium tracking-[0.2em] uppercase text-rose-lt mb-3.5">Colección</h5>
-          <a href="#cipriani" className="block text-[13px] font-light leading-8 hover:text-cream transition-colors">Cipriani Residences</a>
-          <a href="#elle" className="block text-[13px] font-light leading-8 hover:text-cream transition-colors">Elle Residences</a>
-          <a href="#domus" className="block text-[13px] font-light leading-8 hover:text-cream transition-colors">Domus Brickell</a>
+          <a href="/cipriani-residences" className="block text-[13px] font-light leading-8 hover:text-cream transition-colors">Cipriani Residences</a>
+          <a href="/elle-residences-miami" className="block text-[13px] font-light leading-8 hover:text-cream transition-colors">Elle Residences</a>
+          <a href="/domus-brickell" className="block text-[13px] font-light leading-8 hover:text-cream transition-colors">Domus Brickell</a>
           <a href="#comparar" className="block text-[13px] font-light leading-8 hover:text-cream transition-colors">Comparar torres</a>
         </div>
         <div>

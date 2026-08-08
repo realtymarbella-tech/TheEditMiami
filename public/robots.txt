@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://santamaria-collection.vercel.app/sitemap.xml
+Sitemap: https://www.santamaria-collection.com/sitemap.xml
 
 # Bloquear rutas internas
 Disallow: /images/og/
