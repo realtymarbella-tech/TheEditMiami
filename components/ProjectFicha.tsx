@@ -7,6 +7,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
+interface ExtraSection {
+  id?: string;
+  overline: string;
+  title: string;
+  body: string;
+  bg?: string; // clase tailwind de fondo, default bg-charcoal-950
+}
+
 interface Props {
   slug: string; accent: string; accentDk: string; themeColor: string;
   num: string; name: string; tag: string; price: string;
@@ -16,6 +24,8 @@ interface Props {
   location: string; process: [string, string, string][];
   video: string; poster: string; gallery: string[];
   other: { slug: string; name: string }[];
+  // Secciones extra opcionales — se insertan después de "La visión"
+  extraSections?: ExtraSection[];
 }
 
 export default function ProjectFicha(p: Props) {
@@ -106,6 +116,17 @@ export default function ProjectFicha(p: Props) {
             {p.quote && <blockquote className="font-serif italic text-xl font-light text-cream border-l-2 pl-5 mt-8 leading-snug" style={{ borderColor: p.accent }}>{p.quote}</blockquote>}
           </div>
         </section>
+
+        {/* EXTRA SECTIONS — opcionales, definidas por cada proyecto */}
+        {p.extraSections?.map((sec, i) => (
+          <section key={i} id={sec.id} className={`px-6 md:px-16 py-20 ${sec.bg ?? "bg-charcoal-950"}`}>
+            <div className="max-w-2xl mx-auto panel">
+              <div className="text-[11px] font-medium tracking-[0.28em] uppercase mb-4" style={{ color: p.accent }}>{sec.overline}</div>
+              <h2 className="font-serif text-3xl md:text-4xl font-light mb-6">{sec.title}</h2>
+              <p className="text-[15px] font-light leading-loose text-charcoal-200 whitespace-pre-line">{sec.body}</p>
+            </div>
+          </section>
+        ))}
 
         {/* PANEL 3: Cifras + diseño */}
         <section className="px-6 md:px-16 py-20">

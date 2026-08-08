@@ -59,6 +59,39 @@ export default function Page() {
         video="/videos/elle.mp4"
         poster="/images/elle/poster_elle.webp"
         gallery={["/images/elle/living.webp","/images/elle/dining.webp","/images/elle/pool.webp","/images/elle/view25.webp"]}
+        extraSections={[
+          {
+            overline: "La herencia ELLE",
+            title: "La autoridad mundial de la moda, por más de 80 años",
+            body: "Antes que los influencers, antes del street style, estuvo ELLE. Desde nuestra primera portada en 1945, hemos definido, desafiado y celebrado qué significa vivir con estilo. No seguimos tendencias. Las creamos. No comentamos sobre la cultura. La moldeamos.
+
+ELLE ha dado voz a diseñadores visionarios y ayudado a millones de personas a encontrar su propio lenguaje de estilo. Ahora, por primera vez, ELLE lleva su inigualable criterio para la belleza y el diseño al mundo del real estate de lujo. ELLE Residences Miami no es un edificio de marca. Es un legado arquitectónico.",
+            bg: "bg-[#1a0f0a]",
+          },
+          {
+            overline: "La visión del diseño",
+            title: "Couture Living. Diseñado por quienes crean el estilo.",
+            body: "En ELLE Residences, la curaduría lo es todo. Cada elemento — desde los acabados elegidos a mano hasta las líneas arquitectónicas — ha sido seleccionado por los árbitros del gusto de ELLE.
+
+No empezamos con el edificio. Empezamos con la pregunta: ¿Cómo se sentiría vivir dentro de la portada de una revista ELLE? ¿Cómo entraría la luz? ¿Cómo te sentirías cada mañana?
+
+El resultado: mármol italiano, molduras personalizadas, pisos de madera en chevron francés. Esto no es decoración. Es arquitectura editada.",
+            bg: "bg-charcoal-900",
+          },
+          {
+            overline: "Un día en ELLE",
+            title: "La experiencia de vivir aquí",
+            body: "7:30 AM · Tu terraza privada
+El sol sale sobre Biscayne Bay. La brisa salada. El silencio de tener la ciudad debajo de ti, completamente separada. Tu espresso en mano, la Riviera francesa reconstruida en Edgewater.
+
+1 PM · ELLE Lounge
+Un amigo de Nueva York llama. "¿Dónde te encuentro?" No es un lobby. No es un café. Es el lugar donde ves a quien importa, donde te ves a ti misma.
+
+7 PM · Preparándose para la noche
+Te preparas. No es vanidad. Es ritual. Es el acto de convertirte en la versión más refinada de ti misma. Miami te espera. Y llevas ELLE contigo.",
+            bg: "bg-charcoal-950",
+          },
+        ]}
         other={[{slug:"cipriani-residences",name:"Cipriani Residences"},{slug:"domus",name:"Domus Brickell"}]}
       />
     </>
