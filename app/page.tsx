@@ -54,7 +54,7 @@ export default function Home() {
         body="La primera ELLE Residences del mundo: chic francés contemporáneo, entregada amueblada y lista para vivir."
         stats={[["180 unidades", ""], ["26 plantas", ""], ["Edgewater", ""], ["Entrega 2026", ""]]}
         linkLabel="Ver ficha completa →"
-        linkHref="/elle"
+        linkHref="/elle-residences-miami"
         linkColor="text-flamingo-dk"
         accentBorder="border-flamingo"
         img="/images/elle/home_elle.webp"
