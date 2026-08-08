@@ -72,7 +72,7 @@ export default function ElleResidences() {
   const inputCls = "bg-transparent border border-charcoal-700 text-cream px-4 py-3.5 text-sm font-light placeholder:text-charcoal-400 focus:outline-none focus:border-flamingo transition-colors";
 
   return (
-    <div className="text-cream">
+    <div className="bg-charcoal-950 text-cream">
       {/* NAV */}
       <nav className="fixed top-0 inset-x-0 z-[100] h-[68px] flex items-center gap-5 px-6 md:px-16 bg-charcoal-950/50 backdrop-blur-md border-b border-white/10">
         <Link href="/" className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors flex-1">← Santamaría Collection</Link>
