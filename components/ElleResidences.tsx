@@ -86,8 +86,8 @@ export default function ElleResidences() {
       </nav>
 
       {/* SEC 1 — HERO */}
-      <header className="relative min-h-screen flex items-end overflow-hidden pt-[68px]">
-        <div className="absolute inset-0 z-0" style={{ backgroundImage: "url(/images/elle/poster_elle.webp)", backgroundSize: "cover", backgroundPosition: "center" }} />
+      <header className="relative min-h-screen flex items-end overflow-hidden pt-[68px]" style={{ backgroundImage: "url(/images/elle/poster_elle.webp)", backgroundSize: "cover", backgroundPosition: "center" }}>
+        <div className="absolute inset-0 z-0" />
         <video ref={videoRef} muted loop playsInline preload="metadata" src="/videos/elle.mp4"
           className="absolute z-0 object-cover opacity-0 transition-opacity duration-700" style={{ inset: "-5%", width: "110%", height: "110%" }} />
         <div className="absolute inset-0 z-[1]" style={{ background: "linear-gradient(180deg,rgba(8,8,7,.35) 0%,rgba(8,8,7,.55) 55%,rgba(8,8,7,.92) 100%)" }} />
