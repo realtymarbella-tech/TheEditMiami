@@ -16,7 +16,13 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://www.santamaria-collection.com" },
+  alternates: {
+    canonical: "https://www.santamaria-collection.com",
+    languages: {
+      "es": "https://www.santamaria-collection.com",
+      "en": "https://www.santamaria-collection.com/en",
+    },
+  },
   metadataBase: new URL("https://www.santamaria-collection.com"),
   title: "Santamaría Collection — Residencias de Lujo en Miami",
   description:

@@ -1,41 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://santamaria-collection.vercel.app/</loc>
-    <lastmod>2026-08-04</lastmod>
+    <loc>https://www.santamaria-collection.com/</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image><image:loc>https://santamaria-collection.vercel.app/images/og/og-home.jpg</image:loc>
-      <image:title>Santamaría Collection — Residencias de Lujo en Miami</image:title></image:image>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.santamaria-collection.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.santamaria-collection.com/en"/>
+    <image:image><image:loc>https://www.santamaria-collection.com/images/og/og-home.jpg</image:loc></image:image>
   </url>
 
   <url>
-    <loc>https://santamaria-collection.vercel.app/cipriani</loc>
-    <lastmod>2026-08-04</lastmod>
+    <loc>https://www.santamaria-collection.com/en</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <image:image><image:loc>https://santamaria-collection.vercel.app/images/og/og-cipriani.jpg</image:loc>
-      <image:title>Cipriani Residences Miami — 950 ft sobre Brickell</image:title></image:image>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.santamaria-collection.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.santamaria-collection.com/en"/>
+    <image:image><image:loc>https://www.santamaria-collection.com/images/og/og-home.jpg</image:loc></image:image>
   </url>
 
   <url>
-    <loc>https://santamaria-collection.vercel.app/elle</loc>
-    <lastmod>2026-08-04</lastmod>
+    <loc>https://www.santamaria-collection.com/cipriani-residences</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image><image:loc>https://santamaria-collection.vercel.app/images/og/og-elle.jpg</image:loc>
-      <image:title>Elle Residences Miami — Prêt-à-Vivre en Edgewater</image:title></image:image>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.santamaria-collection.com/cipriani-residences"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.santamaria-collection.com/en/cipriani-residences"/>
+    <image:image><image:loc>https://www.santamaria-collection.com/images/og/og-cipriani.jpg</image:loc></image:image>
   </url>
 
   <url>
-    <loc>https://santamaria-collection.vercel.app/domus</loc>
-    <lastmod>2026-08-04</lastmod>
+    <loc>https://www.santamaria-collection.com/en/cipriani-residences</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image><image:loc>https://santamaria-collection.vercel.app/images/og/og-domus.jpg</image:loc>
-      <image:title>Domus Brickell — Inversión Flexible en Miami</image:title></image:image>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.santamaria-collection.com/cipriani-residences"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.santamaria-collection.com/en/cipriani-residences"/>
+    <image:image><image:loc>https://www.santamaria-collection.com/images/og/og-cipriani.jpg</image:loc></image:image>
+  </url>
+
+  <url>
+    <loc>https://www.santamaria-collection.com/elle-residences-miami</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.santamaria-collection.com/elle-residences-miami"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.santamaria-collection.com/en/elle-residences-miami"/>
+    <image:image><image:loc>https://www.santamaria-collection.com/images/og/og-elle.jpg</image:loc></image:image>
+  </url>
+
+  <url>
+    <loc>https://www.santamaria-collection.com/en/elle-residences-miami</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.santamaria-collection.com/elle-residences-miami"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.santamaria-collection.com/en/elle-residences-miami"/>
+    <image:image><image:loc>https://www.santamaria-collection.com/images/og/og-elle.jpg</image:loc></image:image>
+  </url>
+
+  <url>
+    <loc>https://www.santamaria-collection.com/domus-brickell</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.santamaria-collection.com/domus-brickell"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.santamaria-collection.com/en/domus-brickell"/>
+    <image:image><image:loc>https://www.santamaria-collection.com/images/og/og-domus.jpg</image:loc></image:image>
+  </url>
+
+  <url>
+    <loc>https://www.santamaria-collection.com/en/domus-brickell</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.santamaria-collection.com/domus-brickell"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.santamaria-collection.com/en/domus-brickell"/>
+    <image:image><image:loc>https://www.santamaria-collection.com/images/og/og-domus.jpg</image:loc></image:image>
   </url>
 
 </urlset>
