@@ -35,8 +35,12 @@ export default function Footer({ locale, t }: Props) {
           <p className="text-[13px] font-light leading-8">Marbella · Miami</p>
         </div>
       </div>
-      <div className="max-w-6xl mx-auto pt-6 border-t border-white/10 text-[10.5px] font-light text-charcoal-500 leading-relaxed">
-        {t.legal}
+      <div className="max-w-6xl mx-auto pt-6 border-t border-white/10 flex flex-col md:flex-row gap-3 md:gap-8 items-start md:items-center">
+        <p className="text-[10.5px] font-light text-charcoal-500 leading-relaxed flex-1">{t.legal}</p>
+        <div className="flex gap-5 shrink-0">
+          <a href={`${prefix}/legal`} className="text-[10.5px] text-charcoal-400 hover:text-cream transition-colors whitespace-nowrap">{t.legalLink}</a>
+          <a href={`${prefix}/${locale === "en" ? "privacy" : "privacidad"}`} className="text-[10.5px] text-charcoal-400 hover:text-cream transition-colors whitespace-nowrap">{t.privacyLink}</a>
+        </div>
       </div>
     </footer>
   );

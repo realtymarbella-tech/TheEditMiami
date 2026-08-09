@@ -31,6 +31,8 @@ export default async function HomeEn() {
     tagline: "An editorial selection of new construction residences in Miami. Curated for those who know the difference.",
     collection: "Collection", contact: "Contact", compare: "Compare towers",
     legal: "© 2026 Santamaría Collection. All rights reserved. Images are artistic representations for illustrative purposes only. Prices, timelines, and specifications subject to change without notice. This is not an offer to sell where prohibited by law. Equal housing opportunity.",
+    legalLink: "Legal Notice",
+    privacyLink: "Privacy Policy",
   };
 
   return (

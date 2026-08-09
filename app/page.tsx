@@ -21,7 +21,7 @@ export default async function Home() {
   const tProjects = await getTranslations("projects");
 
   const navT = { cipriani: tNav("cipriani"), elle: tNav("elle"), domus: tNav("domus"), compare: tNav("compare"), access: tNav("access"), lang: tNav("lang") };
-  const footerT = { tagline: tFooter("tagline"), collection: tFooter("collection"), contact: tFooter("contact"), compare: tFooter("compare"), legal: tFooter("legal") };
+  const footerT = { tagline: tFooter("tagline"), collection: tFooter("collection"), contact: tFooter("contact"), compare: tFooter("compare"), legal: tFooter("legal"), legalLink: tFooter("legalLink"), privacyLink: tFooter("privacyLink") };
 
   const isEn = locale === "en";
   const prefix = isEn ? "/en" : "";

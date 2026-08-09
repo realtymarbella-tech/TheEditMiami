@@ -73,7 +73,9 @@
     "collection": "Colección",
     "contact": "Contacto",
     "compare": "Comparar torres",
-    "legal": "© 2026 Santamaría Collection. Todos los derechos reservados. Las imágenes son representaciones artísticas con fines ilustrativos. Precios, plazos y especificaciones sujetos a cambios sin previo aviso. Esta no es una oferta de venta donde la ley lo prohíba. Igualdad de oportunidades en vivienda."
+    "legal": "© 2026 Santamaría Collection. Todos los derechos reservados. Las imágenes son representaciones artísticas con fines ilustrativos. Precios, plazos y especificaciones sujetos a cambios sin previo aviso. Esta no es una oferta de venta donde la ley lo prohíba. Igualdad de oportunidades en vivienda.",
+    "legalLink": "Aviso Legal",
+    "privacyLink": "Política de Privacidad"
   },
   "projects": {
     "from": "Desde",
