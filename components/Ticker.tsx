@@ -58,12 +58,12 @@ export default function Ticker({ locale }: Props) {
               </div>
             ) : (
               <div className="flex items-center gap-3 px-10">
-                <div className="flex items-center justify-center shrink-0" style={{ height: "36px" }}>
+                <div className="flex items-center justify-center shrink-0" style={{ height: "56px" }}>
                   {(() => {
                   const logo = LOGOS[item.name ?? ""];
                   return logo ? (
                     logo.type === "svg"
-                      ? <img src={logo.src} alt={item.name ?? ""} style={{ height: "32px", width: "auto", opacity: 0.9 }} />
+                      ? <img src={logo.src} alt={item.name ?? ""} style={{ height: "52px", width: "auto", opacity: 0.9 }} />
                       : <Image src={logo.src} alt={item.name ?? ""} fill className="object-cover" sizes="80px" />
                   ) : null;
                 })()}
