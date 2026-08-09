@@ -31,9 +31,15 @@ const LOGO_DETAIL: Record<string, string> = {
 };
 
 const LOGO_HEIGHT: Record<string, string> = {
-  cipriani: "56px",
-  elle: "216px",
-  domus: "56px",
+  cipriani: "80px",
+  elle: "160px",
+  domus: "80px",
+};
+
+const LOGO_WIDTH: Record<string, string> = {
+  cipriani: "160px",
+  elle: "200px",
+  domus: "200px",
 };
 
 export default function Ticker({ locale }: Props) {
@@ -64,7 +70,12 @@ export default function Ticker({ locale }: Props) {
                 <img
                   src={`/logos/${item.name}.svg`}
                   alt={item.name ?? ""}
-                  style={{ height: LOGO_HEIGHT[item.name ?? "cipriani"] ?? "56px", width: "auto", opacity: 0.9 }}
+                  style={{
+                    height: LOGO_HEIGHT[item.name ?? "cipriani"] ?? "80px",
+                    width: LOGO_WIDTH[item.name ?? "cipriani"] ?? "160px",
+                    opacity: 0.9,
+                    flexShrink: 0,
+                  }}
                 />
               </div>
             )}
