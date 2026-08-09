@@ -25,10 +25,10 @@ const ITEMS_EN = [
   { type: "stat", value: "$500K", label: "Starting price" },
 ];
 
-const LOGOS: Record<string, string> = {
-  "Cipriani": "/images/og/og-cipriani.jpg",
-  "Elle Residences": "/images/og/og-elle.jpg",
-  "Domus Brickell": "/images/og/og-domus.jpg",
+const LOGOS: Record<string, { src: string; type: "png" | "svg" }> = {
+  "Cipriani": { src: "/logos/cipriani.svg", type: "svg" },
+  "Elle Residences": { src: "/logos/elle.png", type: "png" },
+  "Domus Brickell": { src: "/logos/domus.svg", type: "svg" },
 };
 
 export default function Ticker({ locale }: Props) {
@@ -58,8 +58,15 @@ export default function Ticker({ locale }: Props) {
               </div>
             ) : (
               <div className="flex items-center gap-3 px-10">
-                <div className="relative w-9 h-9 overflow-hidden shrink-0" style={{ borderRadius: "2px" }}>
-                  <Image src={LOGOS[item.name ?? ""] ?? "/images/og/og-home.jpg"} alt={item.name ?? ""} fill className="object-cover" sizes="36px" />
+                <div className="flex items-center justify-center shrink-0" style={{ height: "36px" }}>
+                  {(() => {
+                  const logo = LOGOS[item.name ?? ""];
+                  return logo ? (
+                    logo.type === "svg"
+                      ? <img src={logo.src} alt={item.name ?? ""} style={{ height: "32px", width: "auto", opacity: 0.9 }} />
+                      : <Image src={logo.src} alt={item.name ?? ""} fill className="object-cover" sizes="80px" />
+                  ) : null;
+                })()}
                 </div>
                 <div>
                   <div className="text-[11px] font-medium tracking-wide text-cream whitespace-nowrap">{item.name}</div>
