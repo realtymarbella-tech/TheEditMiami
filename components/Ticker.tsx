@@ -27,7 +27,7 @@ const ITEMS_EN = [
 
 const LOGOS: Record<string, { src: string; type: "png" | "svg" }> = {
   "Cipriani": { src: "/logos/cipriani.svg", type: "svg" },
-  "Elle Residences": { src: "/logos/elle.png", type: "png" },
+  "Elle Residences": { src: "/logos/elle.svg", type: "svg" },
   "Domus Brickell": { src: "/logos/domus.svg", type: "svg" },
 };
 
