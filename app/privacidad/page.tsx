@@ -1,3 +1,4 @@
+import NoLoader from "@/components/NoLoader";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Privacidad() {
   return (
-    <script dangerouslySetInnerHTML={{ __html: "document.body.classList.add('no-loader','loaded')" }} />
+    <NoLoader />
       <div style={{ background: "#FDFCFB", color: "#121210", minHeight: "100vh" }}>
       <nav style={{ position: "sticky", top: 0, zIndex: 10, background: "rgba(253,252,251,0.92)", backdropFilter: "blur(8px)", borderBottom: "1px solid #E8E3DC", padding: "0 3rem", height: "64px", display: "flex", alignItems: "center" }}>
         <Link href="/" className="font-serif text-base tracking-wide">← Santamaría Collection</Link>
