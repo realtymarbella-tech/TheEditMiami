@@ -7,6 +7,7 @@ import TowerCompare from "@/components/TowerCompare";
 import Team from "@/components/Team";
 import Dossier from "@/components/Dossier";
 import Footer from "@/components/Footer";
+import Ticker from "@/components/Ticker";
 import ScrollRefresh from "@/components/ScrollRefresh";
 
 export default async function Home() {
@@ -39,13 +40,7 @@ export default async function Home() {
         card_elle_meta: tHero("card_elle_meta"),
         card_domus_meta: tHero("card_domus_meta"),
       }} prefix={prefix} />
-
-      <section className="bg-ocean text-cream py-8 px-6 md:px-16 flex flex-wrap gap-6">
-        <div className="flex-1 min-w-[45%] md:min-w-0"><div className="font-serif text-4xl font-light text-aqua-lt">3</div><div className="text-[10.5px] tracking-wide uppercase text-charcoal-200">{tStats("developments")}</div></div>
-        <div className="flex-1 min-w-[45%] md:min-w-0"><div className="font-serif text-4xl font-light text-aqua-lt">1.156</div><div className="text-[10.5px] tracking-wide uppercase text-charcoal-200">{tStats("residences")}</div></div>
-        <div className="flex-1 min-w-[45%] md:min-w-0"><div className="font-serif text-4xl font-light text-aqua-lt">950 ft</div><div className="text-[10.5px] tracking-wide uppercase text-charcoal-200">{tStats("tallest")}</div></div>
-        <div className="flex-1 min-w-[45%] md:min-w-0"><div className="font-serif text-4xl font-light text-aqua-lt">$500K</div><div className="text-[10.5px] tracking-wide uppercase text-charcoal-200">{tStats("entry")}</div></div>
-      </section>
+      <Ticker locale="es" />
 
       <ProjectSection
         id="cipriani" bgClass="bg-cream" num="N.º 01 — El Legado"

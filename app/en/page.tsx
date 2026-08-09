@@ -7,6 +7,7 @@ import TowerCompare from "@/components/TowerCompare";
 import Team from "@/components/Team";
 import Dossier from "@/components/Dossier";
 import Footer from "@/components/Footer";
+import Ticker from "@/components/Ticker";
 import ScrollRefresh from "@/components/ScrollRefresh";
 import type { Metadata } from "next";
 
@@ -49,12 +50,7 @@ export default async function HomeEn() {
         card_elle_meta: "Edgewater · Haute Couture",
         card_domus_meta: "Brickell · Flexible Investment",
       }} />
-      <section className="bg-ocean text-cream py-8 px-6 md:px-16 flex flex-wrap gap-6">
-        <div className="flex-1 min-w-[45%] md:min-w-0"><div className="font-serif text-4xl font-light text-aqua-lt">3</div><div className="text-[10.5px] tracking-wide uppercase text-charcoal-200">Curated developments</div></div>
-        <div className="flex-1 min-w-[45%] md:min-w-0"><div className="font-serif text-4xl font-light text-aqua-lt">1,156</div><div className="text-[10.5px] tracking-wide uppercase text-charcoal-200">Residences</div></div>
-        <div className="flex-1 min-w-[45%] md:min-w-0"><div className="font-serif text-4xl font-light text-aqua-lt">950 ft</div><div className="text-[10.5px] tracking-wide uppercase text-charcoal-200">Florida's tallest residential tower</div></div>
-        <div className="flex-1 min-w-[45%] md:min-w-0"><div className="font-serif text-4xl font-light text-aqua-lt">$500K</div><div className="text-[10.5px] tracking-wide uppercase text-charcoal-200">Starting price</div></div>
-      </section>
+      <Ticker locale="en" />
       <ProjectSection
         id="cipriani" bgClass="bg-cream" num="No. 01 — The Legacy"
         title={<>Four generations<br /><em className="italic font-light">above Brickell</em></>}
