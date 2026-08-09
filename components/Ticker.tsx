@@ -37,7 +37,7 @@ export default function Ticker({ locale }: Props) {
   const repeated = [...items, ...items, ...items];
 
   return (
-    <div className="bg-ocean text-cream overflow-hidden border-y border-white/10 relative" style={{ height: "96px" }}>
+    <div className="bg-ocean text-cream overflow-hidden border-y border-white/10 relative" style={{ height: "192px" }}>
       {/* Gradientes en los bordes */}
       <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none" style={{ background: "linear-gradient(90deg, #0C2430 0%, transparent 100%)" }} />
       <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none" style={{ background: "linear-gradient(270deg, #0C2430 0%, transparent 100%)" }} />
@@ -62,7 +62,7 @@ export default function Ticker({ locale }: Props) {
                   {(() => {
                   const logo = LOGOS[item.name ?? ""];
                   return logo ? (
-                    <img src={logo.src} alt={item.name ?? ""} style={{ height: "72px", width: "auto", opacity: 0.95 }} />
+                    <img src={logo.src} alt={item.name ?? ""} style={{ height: "144px", width: "auto", opacity: 0.95 }} />
                   ) : null;
                 })()}
                 </div>
