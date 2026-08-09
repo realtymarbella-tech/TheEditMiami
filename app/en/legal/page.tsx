@@ -9,8 +9,9 @@ export const metadata: Metadata = {
 
 export default function Legal() {
   return (
-    <div className="bg-cream text-charcoal-950 min-h-screen">
-      <nav className="sticky top-0 z-10 bg-cream/90 backdrop-blur-sm border-b border-charcoal-100 px-6 md:px-16 h-16 flex items-center">
+    <script dangerouslySetInnerHTML={{ __html: "document.body.classList.add('no-loader','loaded')" }} />
+      <div style={{ background: "#FDFCFB", color: "#121210", minHeight: "100vh" }}>
+      <nav style={{ position: "sticky", top: 0, zIndex: 10, background: "rgba(253,252,251,0.92)", backdropFilter: "blur(8px)", borderBottom: "1px solid #E8E3DC", padding: "0 3rem", height: "64px", display: "flex", alignItems: "center" }}>
         <Link href="/en" className="font-serif text-base tracking-wide">← Santamaría Collection</Link>
       </nav>
       <main className="max-w-3xl mx-auto px-6 md:px-0 py-16 md:py-24">
