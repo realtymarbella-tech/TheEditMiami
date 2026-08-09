@@ -62,7 +62,7 @@ export default function Ticker({ locale }: Props) {
                   {(() => {
                   const logo = LOGOS[item.name ?? ""];
                   return logo ? (
-                    <img src={logo.src} alt={item.name ?? ""} style={{ height: "144px", width: "auto", opacity: 0.95 }} />
+                    <img src={logo.src} alt={item.name ?? ""} style={{ height: "216px", width: "auto", opacity: 0.95 }} />
                   ) : null;
                 })()}
                 </div>
