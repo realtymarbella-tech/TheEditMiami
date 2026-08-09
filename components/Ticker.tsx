@@ -26,9 +26,9 @@ const ITEMS_EN = [
 ];
 
 const LOGOS: Record<string, { src: string; type: "png" | "svg" }> = {
-  "Cipriani": { src: "/logos/cipriani.svg", type: "svg" },
-  "Elle Residences": { src: "/logos/elle.svg", type: "svg" },
-  "Domus Brickell": { src: "/logos/domus.svg", type: "svg" },
+  "Cipriani": { src: "/logos/cipriani.png", type: "png" },
+  "Elle Residences": { src: "/logos/elle.png", type: "png" },
+  "Domus Brickell": { src: "/logos/domus.png", type: "png" },
 };
 
 export default function Ticker({ locale }: Props) {
@@ -62,9 +62,7 @@ export default function Ticker({ locale }: Props) {
                   {(() => {
                   const logo = LOGOS[item.name ?? ""];
                   return logo ? (
-                    logo.type === "svg"
-                      ? <img src={logo.src} alt={item.name ?? ""} style={{ height: "52px", width: "auto", opacity: 0.9 }} />
-                      : <Image src={logo.src} alt={item.name ?? ""} fill className="object-cover" sizes="80px" />
+                    <img src={logo.src} alt={item.name ?? ""} style={{ height: "52px", width: "auto", opacity: 0.95 }} />
                   ) : null;
                 })()}
                 </div>
