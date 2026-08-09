@@ -25,8 +25,8 @@ const ITEMS_EN = [
   { type: "stat", value: "$500K", label: "Starting price" },
 ];
 
-const LOGO_HEIGHT: Record<string, number> = { cipriani: 80, elle: 160, domus: 80 };
-const LOGO_WIDTH: Record<string, number> = { cipriani: 160, elle: 200, domus: 200 };
+const LOGO_HEIGHT: Record<string, number> = { cipriani: 130, elle: 160, domus: 80 };
+const LOGO_WIDTH: Record<string, number> = { cipriani: 146, elle: 200, domus: 200 };
 
 function Track({ items }: { items: typeof ITEMS_ES }) {
   return (
