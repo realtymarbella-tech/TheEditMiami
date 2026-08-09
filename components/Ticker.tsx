@@ -1,90 +1,85 @@
 "use client";
-import Image from "next/image";
 
 interface Props {
   locale: string;
 }
 
 const ITEMS_ES = [
-  { type: "stat", value: "3", label: "Desarrollos curados" },
-  { type: "logo", name: "Cipriani", detail: "Brickell · 950 ft · Desde $1.8M" },
-  { type: "stat", value: "1.156", label: "Residencias" },
-  { type: "logo", name: "Elle Residences", detail: "Edgewater · Desde $600K" },
   { type: "stat", value: "950 ft", label: "La torre más alta de Florida" },
-  { type: "logo", name: "Domus Brickell", detail: "Brickell · Desde $500K" },
+  { type: "logo", name: "cipriani" },
+  { type: "stat", value: "3", label: "Desarrollos curados" },
+  { type: "logo", name: "elle" },
+  { type: "stat", value: "1.156", label: "Residencias" },
+  { type: "logo", name: "domus" },
   { type: "stat", value: "$500K", label: "Precio de entrada" },
 ];
 
 const ITEMS_EN = [
-  { type: "stat", value: "3", label: "Curated developments" },
-  { type: "logo", name: "Cipriani", detail: "Brickell · 950 ft · From $1.8M" },
-  { type: "stat", value: "1,156", label: "Residences" },
-  { type: "logo", name: "Elle Residences", detail: "Edgewater · From $600K" },
   { type: "stat", value: "950 ft", label: "Florida's tallest tower" },
-  { type: "logo", name: "Domus Brickell", detail: "Brickell · From $500K" },
+  { type: "logo", name: "cipriani" },
+  { type: "stat", value: "3", label: "Curated developments" },
+  { type: "logo", name: "elle" },
+  { type: "stat", value: "1,156", label: "Residences" },
+  { type: "logo", name: "domus" },
   { type: "stat", value: "$500K", label: "Starting price" },
 ];
 
-const LOGOS: Record<string, { src: string; type: "png" | "svg" }> = {
-  "Cipriani": { src: "/logos/cipriani.svg", type: "svg" },
-  "Elle Residences": { src: "/logos/elle.svg", type: "svg" },
-  "Domus Brickell": { src: "/logos/domus.svg", type: "svg" },
+const LOGO_DETAIL: Record<string, string> = {
+  cipriani: "Brickell · From $1.8M",
+  elle: "Edgewater · From $600K",
+  domus: "Brickell · From $500K",
+};
+
+const LOGO_HEIGHT: Record<string, string> = {
+  cipriani: "56px",
+  elle: "216px",
+  domus: "56px",
 };
 
 export default function Ticker({ locale }: Props) {
   const items = locale === "en" ? ITEMS_EN : ITEMS_ES;
-  // Duplicamos para loop infinito sin saltos
-  const repeated = [...items, ...items];
 
   return (
-    <div className="bg-ocean text-cream overflow-hidden border-y border-white/10 relative" style={{ height: "240px" }}>
-      {/* Gradientes en los bordes */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none" style={{ background: "linear-gradient(90deg, #0C2430 0%, transparent 100%)" }} />
-      <div className="absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none" style={{ background: "linear-gradient(270deg, #0C2430 0%, transparent 100%)" }} />
+    <div
+      className="bg-ocean text-cream border-y border-white/10 relative overflow-hidden"
+      style={{ height: "240px" }}
+    >
+      {/* Gradientes laterales */}
+      <div className="absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
+        style={{ background: "linear-gradient(90deg,#0C2430,transparent)" }} />
+      <div className="absolute right-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
+        style={{ background: "linear-gradient(270deg,#0C2430,transparent)" }} />
 
-      <div
-        className="flex items-center h-full gap-0"
-        style={{
-          width: "max-content",
-          animation: "ticker-scroll 45s linear infinite",
-        }}
-      >
-        {repeated.map((item, i) => (
-          <div key={i} className="flex items-center shrink-0">
+      {/* Pista 1 */}
+      <div className="absolute inset-0 flex items-center" style={{ animation: "ticker1 40s linear infinite" }}>
+        {[...items, ...items].map((item, i) => (
+          <div key={i} className="flex items-center shrink-0 px-10">
             {item.type === "stat" ? (
-              <div className="flex items-baseline gap-2.5 px-10">
-                <span className="font-serif text-2xl font-light text-aqua-lt">{item.value}</span>
+              <div className="flex items-baseline gap-3">
+                <span className="font-serif text-3xl font-light text-aqua-lt whitespace-nowrap">{item.value}</span>
                 <span className="text-[10px] font-medium tracking-[0.18em] uppercase text-charcoal-200 whitespace-nowrap">{item.label}</span>
               </div>
             ) : (
-              <div className="flex items-center gap-3 px-10">
-                <div className="flex items-center justify-center shrink-0" style={{ height: "216px" }}>
-                  {(() => {
-                  const logo = LOGOS[item.name ?? ""];
-                  return logo ? (
-                    <img src={logo.src} alt={item.name ?? ""} style={{ height: "216px", width: "auto", opacity: 0.95 }} />
-                  ) : null;
-                })()}
-                </div>
-                <div>
-                  <div className="text-[11px] font-medium tracking-wide text-cream whitespace-nowrap">{item.name}</div>
-                  <div className="text-[9.5px] tracking-wide text-charcoal-400 whitespace-nowrap">{item.detail}</div>
-                </div>
+              <div className="flex flex-col items-center gap-1">
+                <img
+                  src={`/logos/${item.name}.svg`}
+                  alt={item.name ?? ""}
+                  style={{ height: LOGO_HEIGHT[item.name ?? "cipriani"] ?? "56px", width: "auto", opacity: 0.9 }}
+                />
               </div>
             )}
-            {/* Separador */}
-            <span className="text-charcoal-700 text-lg shrink-0">·</span>
+            <span className="ml-10 text-charcoal-700 text-lg shrink-0">·</span>
           </div>
         ))}
       </div>
 
       <style>{`
-        @keyframes ticker-scroll {
-          0%   { transform: translateX(0); }
+        @keyframes ticker1 {
+          0%   { transform: translateX(0%); }
           100% { transform: translateX(-50%); }
         }
         @media (prefers-reduced-motion: reduce) {
-          [style*="ticker-scroll"] { animation: none; }
+          .ticker-track { animation: none !important; }
         }
       `}</style>
     </div>
