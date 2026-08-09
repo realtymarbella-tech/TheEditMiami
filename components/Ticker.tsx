@@ -33,8 +33,8 @@ const LOGOS: Record<string, { src: string; type: "png" | "svg" }> = {
 
 export default function Ticker({ locale }: Props) {
   const items = locale === "en" ? ITEMS_EN : ITEMS_ES;
-  // Triplicamos para loop infinito sin saltos
-  const repeated = [...items, ...items, ...items];
+  // Duplicamos para loop infinito sin saltos
+  const repeated = [...items, ...items];
 
   return (
     <div className="bg-ocean text-cream overflow-hidden border-y border-white/10 relative" style={{ height: "240px" }}>
@@ -81,7 +81,7 @@ export default function Ticker({ locale }: Props) {
       <style>{`
         @keyframes ticker-scroll {
           0%   { transform: translateX(0); }
-          100% { transform: translateX(-33.333%); }
+          100% { transform: translateX(-50%); }
         }
         @media (prefers-reduced-motion: reduce) {
           [style*="ticker-scroll"] { animation: none; }
