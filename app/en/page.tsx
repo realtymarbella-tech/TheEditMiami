@@ -96,7 +96,7 @@ export default async function HomeEn() {
         stats={[["240", "residences"], ["50K ft²", "amenities"], ["Brickell", ""], ["Delivery 2028", ""]]}
         linkLabel="View full profile →" linkHref="/en/one-twenty-brickell"
         linkColor="text-[#A88A5C]" accentBorder="border-[#C9A876]"
-        img="/images/onetwenty/home_onetwenty.webp" focus={[0.5, 0.4]}
+        img="/images/onetwenty/exterior.webp" focus={[0.5, 0.4]}
         glow={[0.788, 0.659, 0.463]} base={[0.961, 0.941, 0.91]}
         count={240} countLabel="residences"
       />

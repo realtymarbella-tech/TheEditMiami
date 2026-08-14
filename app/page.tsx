@@ -90,7 +90,7 @@ export default async function Home() {
         stats={[["240", isEn ? "residences" : "residencias"], ["50K ft²", isEn ? "amenities" : "amenidades"], ["Brickell", ""], [isEn ? "Delivery 2028" : "Entrega 2028", ""]]}
         linkLabel={tProjects("view")} linkHref={`${prefix}/one-twenty-brickell`}
         linkColor="text-[#A88A5C]" accentBorder="border-[#C9A876]"
-        img="/images/onetwenty/home_onetwenty.webp" focus={[0.5, 0.4]}
+        img="/images/onetwenty/exterior.webp" focus={[0.5, 0.4]}
         glow={[0.788, 0.659, 0.463]} base={[0.961, 0.941, 0.91]}
         count={240} countLabel={isEn ? "residences" : "residencias"}
       />
