@@ -81,15 +81,15 @@ export default function Hero({ locale, t, prefix }: Props) {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 grid-rows-[59fr_41fr] gap-0.5 min-h-[64vh] md:min-h-screen">
+      <div className="grid grid-cols-2 grid-rows-2 gap-0.5 min-h-[64vh] md:min-h-screen">
         {CARDS.map((c, i) => (
-          <Link key={c.href} href={c.href} className={`relative overflow-hidden flex items-end bg-charcoal-900 group ${i === 0 ? "col-span-2" : ""}`}>
-            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${c.img})`, backgroundPosition: i === 0 ? "center 30%" : "center" }} />
+          <Link key={c.href} href={c.href} className="relative overflow-hidden flex items-end bg-charcoal-900 group">
+            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${c.img})`, backgroundPosition: "center 30%" }} />
             <div className="absolute inset-0 z-[2]" style={{ background: "linear-gradient(to top,rgba(12,15,18,.92) 0%,rgba(12,15,18,.32) 42%,transparent 70%)" }} />
-            <div className="relative z-[3] p-5 flex flex-col gap-1">
-              <div className={`font-medium tracking-wide uppercase text-cream ${i === 0 ? "text-xl" : "text-[15px]"}`}>{c.name}</div>
-              <div className={`text-[10.5px] tracking-widest uppercase ${c.accent}`}>{c.meta}</div>
-              <div className="text-xs font-light text-charcoal-200 mt-0.5">{c.price}</div>
+            <div className="relative z-[3] p-4 flex flex-col gap-1">
+              <div className="text-[13px] font-medium tracking-wide uppercase text-cream leading-tight">{c.name}</div>
+              <div className={`text-[9.5px] tracking-widest uppercase ${c.accent}`}>{c.meta}</div>
+              <div className="text-[11px] font-light text-charcoal-200 mt-0.5">{c.price}</div>
             </div>
           </Link>
         ))}
