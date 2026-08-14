@@ -72,7 +72,7 @@ export default function Page() {
           ["03","Hitos de construcción","Calendario de pagos oficial durante la obra."],
           ["04","Entrega — 2028","Residencia amueblada con suite de oficina operativa desde el primer día."],
         ]}
-        video=""
+        video="/videos/onetwenty.mp4"
         poster="/images/onetwenty/hero_onetwenty.webp"
         gallery={[
           "/images/onetwenty/gallery1.webp",

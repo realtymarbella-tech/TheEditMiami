@@ -72,7 +72,7 @@ export default function Page() {
           ["03","Construction Milestones","Official payment schedule during construction."],
           ["04","Delivery — 2028","Furnished residence with fully operational office suite from day one."],
         ]}
-        video=""
+        video="/videos/onetwenty.mp4"
         poster="/images/onetwenty/hero_onetwenty.webp"
         gallery={[
           "/images/onetwenty/gallery1.webp",
