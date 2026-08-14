@@ -13,6 +13,7 @@ const ITEMS_ES = [
   { type: "stat", value: "1.156", label: "Residencias" },
   { type: "logo", name: "domus" },
   { type: "stat", value: "$500K", label: "Precio de entrada" },
+  { type: "logo", name: "onetwenty" },
 ];
 
 const ITEMS_EN = [
@@ -23,10 +24,11 @@ const ITEMS_EN = [
   { type: "stat", value: "1,156", label: "Residences" },
   { type: "logo", name: "domus" },
   { type: "stat", value: "$500K", label: "Starting price" },
+  { type: "logo", name: "onetwenty" },
 ];
 
-const LOGO_HEIGHT: Record<string, number> = { cipriani: 130, elle: 160, domus: 80 };
-const LOGO_WIDTH: Record<string, number> = { cipriani: 146, elle: 200, domus: 200 };
+const LOGO_HEIGHT: Record<string, number> = { cipriani: 130, elle: 160, domus: 80, onetwenty: 70 };
+const LOGO_WIDTH: Record<string, number> = { cipriani: 146, elle: 200, domus: 200, onetwenty: 180 };
 
 function Track({ items }: { items: typeof ITEMS_ES }) {
   return (

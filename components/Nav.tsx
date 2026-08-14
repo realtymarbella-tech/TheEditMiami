@@ -48,6 +48,7 @@ export default function Nav({ locale, t }: Props) {
         <a href={`${prefix}/cipriani-residences`} className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">{t.cipriani}</a>
         <a href={`${prefix}/elle-residences-miami`} className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">{t.elle}</a>
         <a href={`${prefix}/domus-brickell`} className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">{t.domus}</a>
+        <a href={`${prefix}/one-twenty-brickell`} className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">One Twenty</a>
         <a href={`${prefix}/#comparar`} className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">{t.compare}</a>
         <span className="w-px h-5 bg-white/20" />
         <LocaleSwitcher currentLocale={locale} label={t.lang} />

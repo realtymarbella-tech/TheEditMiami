@@ -82,7 +82,20 @@ export default async function Home() {
         count={579} countLabel={isEn ? "flats" : "flats"}
       />
 
-      <TowerCompare locale={locale} t={{
+      <ProjectSection
+        id="onetwenty" bgClass="bg-[#F5F0E8]" flip num="N.º 04 — El Equilibrio"
+        title={<>La vida<br /><em className="italic font-light">perfectamente equilibrada</em></>}
+        tag={isEn ? "The first residence where your office is already included" : "La primera residencia donde tu oficina ya está incluida"}
+        body={isEn ? "240 fully furnished residences in Brickell. Private office suite included in every unit. The only building in Miami where work and life share the same address." : "240 residencias amuebladas en Brickell. Suite de oficina privada incluida en cada unidad. El único edificio en Miami donde trabajo y vida comparten la misma dirección."}
+        stats={[["240", isEn ? "residences" : "residencias"], ["50K ft²", isEn ? "amenities" : "amenidades"], ["Brickell", ""], [isEn ? "Delivery 2028" : "Entrega 2028", ""]]}
+        linkLabel={tProjects("view")} linkHref={`${prefix}/one-twenty-brickell`}
+        linkColor="text-[#A88A5C]" accentBorder="border-[#C9A876]"
+        img="/images/onetwenty/home_onetwenty.webp" focus={[0.5, 0.4]}
+        glow={[0.788, 0.659, 0.463]} base={[0.961, 0.941, 0.91]}
+        count={240} countLabel={isEn ? "residences" : "residencias"}
+      />
+
+            <TowerCompare locale={locale} t={{
         overline: tCompare("overline"), h2: tCompare("h2"), h2_em: tCompare("h2_em"),
         sub: tCompare("sub"), elle_info: tCompare("elle_info"),
         cip_info: tCompare("cip_info"), dom_info: tCompare("dom_info"),

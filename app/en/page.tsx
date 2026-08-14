@@ -88,7 +88,20 @@ export default async function HomeEn() {
         glow={[0.16, 0.71, 0.68]} base={[0.949, 0.969, 0.965]}
         count={579} countLabel="flats"
       />
-      <TowerCompare locale={locale} t={{
+      <ProjectSection
+        id="onetwenty" bgClass="bg-[#F5F0E8]" flip num="No. 04 — The Balance"
+        title={<>Life<br /><em className="italic font-light">perfectly balanced</em></>}
+        tag="The first residence where your office is already included"
+        body="240 fully furnished residences in Brickell. Private office suite included in every unit. The only building in Miami where work and life share the same address."
+        stats={[["240", "residences"], ["50K ft²", "amenities"], ["Brickell", ""], ["Delivery 2028", ""]]}
+        linkLabel="View full profile →" linkHref="/en/one-twenty-brickell"
+        linkColor="text-[#A88A5C]" accentBorder="border-[#C9A876]"
+        img="/images/onetwenty/home_onetwenty.webp" focus={[0.5, 0.4]}
+        glow={[0.788, 0.659, 0.463]} base={[0.961, 0.941, 0.91]}
+        count={240} countLabel="residences"
+      />
+
+            <TowerCompare locale={locale} t={{
         overline: "The collection, to scale", h2: "Three towers.", h2_em: "One city.",
         sub: "Silhouettes proportionally scaled to each development's actual height. Hover over each tower.",
         elle_info: "26 floors · ~300 ft\nEdgewater · From $600K\nDelivery 2026",

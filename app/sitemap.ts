@@ -19,6 +19,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: { es: `${BASE}/elle-residences-miami`, en: `${BASE}/en/elle-residences-miami` } } },
     { url: `${BASE}/domus-brickell`, lastModified: now, changeFrequency: "weekly", priority: 0.9,
       alternates: { languages: { es: `${BASE}/domus-brickell`, en: `${BASE}/en/domus-brickell` } } },
+    { url: `${BASE}/one-twenty-brickell`, lastModified: now, changeFrequency: "weekly", priority: 0.9,
+      alternates: { languages: { es: `${BASE}/one-twenty-brickell`, en: `${BASE}/en/one-twenty-brickell` } } },
+    { url: `${BASE}/en/one-twenty-brickell`, lastModified: now, changeFrequency: "weekly", priority: 0.9,
+      alternates: { languages: { es: `${BASE}/one-twenty-brickell`, en: `${BASE}/en/one-twenty-brickell` } } },
     { url: `${BASE}/en/domus-brickell`, lastModified: now, changeFrequency: "weekly", priority: 0.9,
       alternates: { languages: { es: `${BASE}/domus-brickell`, en: `${BASE}/en/domus-brickell` } } },
   ];
