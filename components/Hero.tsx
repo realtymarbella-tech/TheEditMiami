@@ -6,6 +6,7 @@ import gsap from "gsap";
 
 const SLIDES = [
   { img: "/images/cipriani/home_cip.webp", kb: "kb-zoomin" },
+  { img: "/images/onetwenty/exterior.webp", kb: "kb-panr" },
   { img: "/images/elle/home_elle.webp", kb: "kb-zoomout" },
   { img: "/images/domus/home_domus.webp", kb: "kb-panl" },
   { img: "/images/cipriani/exterior2.webp", kb: "kb-diag" },
@@ -28,6 +29,7 @@ export default function Hero({ locale, t, prefix }: Props) {
     { href: `${prefix}/cipriani-residences`, name: "Cipriani Residences Miami", meta: t.card_cipriani_meta, price: "From $1.8M USD", img: "/images/cipriani/home_cip.webp", accent: "text-sunset" },
     { href: `${prefix}/elle-residences-miami`, name: "Elle Residences", meta: t.card_elle_meta, price: "From $600K USD", img: "/images/elle/home_elle.webp", accent: "text-flamingo" },
     { href: `${prefix}/domus-brickell`, name: "Domus Brickell", meta: t.card_domus_meta, price: "From $500K USD", img: "/images/domus/home_domus.webp", accent: "text-aqua-lt" },
+    { href: `${prefix}/one-twenty-brickell`, name: "One Twenty Brickell", meta: locale === "en" ? "Brickell · Office Included" : "Brickell · Oficina Incluida", price: "From $650K USD", img: "/images/onetwenty/exterior.webp", accent: "text-[#C9A876]" },
   ];
 
   useEffect(() => {
