@@ -35,9 +35,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <MetaPixel />
       <body className={`${cormorant.variable} ${jost.variable} font-sans bg-charcoal-950 text-cream antialiased`}>
         {children}
+        <MetaPixel />
       </body>
     </html>
   );
