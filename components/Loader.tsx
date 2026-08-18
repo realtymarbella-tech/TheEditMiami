@@ -11,7 +11,7 @@ export default function Loader() {
 
   useEffect(() => {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) { loaderRef.current?.remove(); document.body.classList.add('loaded'); document.documentElement.style.visibility = ''; return; }
+    if (reduced) { loaderRef.current?.remove(); document.body.classList.remove('preload-hide'); document.body.classList.add('loaded'); return; }
 
     const tl = gsap.timeline({
       onComplete: () => {

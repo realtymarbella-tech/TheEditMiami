@@ -35,15 +35,8 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: `
-          (function() {
-            // Ocultar body inmediatamente — el loader lo mostrará cuando termine
-            document.documentElement.style.visibility = 'hidden';
-          })();
-        ` }} />
-      </head>
       <body className={`${cormorant.variable} ${jost.variable} font-sans bg-charcoal-950 text-cream antialiased`}>
+          <script dangerouslySetInnerHTML={{ __html: "document.body.classList.add('preload-hide')" }} />
         {children}
         <MetaPixel />
       </body>
