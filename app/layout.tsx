@@ -36,7 +36,6 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${cormorant.variable} ${jost.variable} font-sans bg-charcoal-950 text-cream antialiased`}>
-          <script dangerouslySetInnerHTML={{ __html: "document.body.classList.add('preload-hide')" }} />
         {children}
         <MetaPixel />
       </body>
