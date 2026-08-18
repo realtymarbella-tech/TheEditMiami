@@ -36,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${cormorant.variable} ${jost.variable} font-sans bg-charcoal-950 text-cream antialiased`}>
+          <div id="preloader-cover" style={{ position: "fixed", inset: 0, background: "#121210", zIndex: 997, pointerEvents: "none" }} />
         {children}
         <MetaPixel />
       </body>
