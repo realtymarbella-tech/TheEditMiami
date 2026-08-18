@@ -60,12 +60,20 @@
 
 body { cursor: none; }
 /* Ocultar contenido hasta que el loader termine — evita flash */
-body.preload-hide main,
-body.preload-hide nav,
-body.preload-hide header { opacity: 0 !important; }
-body.loaded main,
-body.loaded nav,
-body.loaded header { opacity: 1; transition: opacity 0.3s ease; }
+body.preload-hide #top,
+body.preload-hide #cipriani,
+body.preload-hide #elle,
+body.preload-hide #domus,
+body.preload-hide #onetwenty,
+body.preload-hide #comparar,
+body.preload-hide #contacto { opacity: 0 !important; }
+body.loaded #top,
+body.loaded #cipriani,
+body.loaded #elle,
+body.loaded #domus,
+body.loaded #onetwenty,
+body.loaded #comparar,
+body.loaded #contacto { opacity: 1; transition: opacity 0.4s ease; }
 /* Visibilidad controlada por el Loader directamente */
 @media (pointer: coarse) { body { cursor: auto; } }
 
