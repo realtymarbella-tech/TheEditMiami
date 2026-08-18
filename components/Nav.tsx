@@ -44,6 +44,9 @@ export default function Nav({ locale, t }: Props) {
           <span className="flex-1 h-px bg-rose" />
         </span>
       </a>
+      <div className="flex md:hidden ml-auto">
+        <LocaleSwitcher currentLocale={locale} label={t.lang} />
+      </div>
       <div className="hidden md:flex gap-8 flex-1 justify-end items-center">
         <a href={`${prefix}/cipriani-residences`} className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">{t.cipriani}</a>
         <a href={`${prefix}/elle-residences-miami`} className="text-xs tracking-wide text-charcoal-200 hover:text-cream transition-colors">{t.elle}</a>
