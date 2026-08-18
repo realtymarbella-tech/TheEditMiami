@@ -11,7 +11,7 @@ export default function Loader() {
 
   useEffect(() => {
     const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) { loaderRef.current?.remove(); document.body.classList.add('loaded'); document.getElementById('preloader-cover')?.remove(); return; }
+    if (reduced) { loaderRef.current?.remove(); document.body.classList.add('loaded'); return; }
 
     const tl = gsap.timeline({
       onComplete: () => {
