@@ -69,3 +69,20 @@ body.spot-on #spotOverlay { opacity: 1; }
 .spot-target { position: relative; transition: filter 1.15s var(--ease-brand); }
 .spot-target::before { content:''; position:absolute; inset:0; z-index:6; border:1px solid transparent; pointer-events:none; transition: border-color 1.15s var(--ease-brand); }
 .spot-target.spot-active { filter: brightness(1.07) saturate(1.05); z-index: 200; }
+
+/* Loader: aparece inmediatamente cubriendo cualquier flash */
+#__loader {
+  animation: none;
+}
+/* Cubrir el contenido mientras React hidrata */
+body:not(.loaded) {
+  overflow: hidden;
+}
+body:not(.no-loader):not(.loaded)::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: #121210;
+  z-index: 998;
+  pointer-events: none;
+}
