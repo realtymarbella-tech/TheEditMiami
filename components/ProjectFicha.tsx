@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { track } from "@/components/useTracker";
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -13,7 +14,7 @@ interface ExtraSection {
   overline: string;
   title: string;
   body: string;
-  bg?: string; // clase tailwind de fondo, default bg-charcoal-950
+  bg?: string;
 }
 
 interface Props {
@@ -25,9 +26,15 @@ interface Props {
   location: string; process: [string, string, string][];
   video: string; poster: string; gallery: string[];
   other: { slug: string; name: string }[];
-  // Secciones extra opcionales — se insertan después de "La visión"
   extraSections?: ExtraSection[];
 }
+
+const PROPERTY_IDS: Record<string, string> = {
+  "cipriani-residences":    "SCR-001",
+  "elle-residences-miami":  "SCR-002",
+  "domus-brickell":         "SCR-003",
+  "one-twenty-brickell":    "SCR-004",
+};
 
 export default function ProjectFicha(p: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -51,12 +58,35 @@ export default function ProjectFicha(p: Props) {
         scrollTrigger: { trigger: el, start: "top 78%" },
       });
     });
-  }, [p.themeColor]);
+
+    // ── TRACK: view_property ──────────────────────────────────
+    track({
+      event_name:    "view_property",
+      property_id:   PROPERTY_IDS[p.slug] || p.slug,
+      property_name: p.name.replace("\n", " "),
+      page_title:    document.title,
+      page_category: "ficha_desarrollo",
+    });
+  }, [p.themeColor, p.slug, p.name]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const d = Object.fromEntries(fd) as Record<string, string>;
+
+    // ── TRACK: contact_property ───────────────────────────────
+    track({
+      event_name:    "contact_property",
+      property_id:   PROPERTY_IDS[p.slug] || p.slug,
+      property_name: p.name.replace("\n", " "),
+      value:         3000,
+      form_id:       `dossier-${p.slug}`,
+      user_data: {
+        em: d.email,
+        ph: d.telefono,
+      },
+    });
+
     fetch("https://sqdvkfcghdjxtyuybxpy.supabase.co/rest/v1/leads", {
       method: "POST", keepalive: true,
       headers: { "Content-Type": "application/json", "Content-Profile": "santamaria",
@@ -65,6 +95,7 @@ export default function ProjectFicha(p: Props) {
         "Prefer": "return=minimal" },
       body: JSON.stringify({ nombre: d.nombre, apellidos: d.apellidos, email: d.email, telefono: d.telefono, proyecto: p.name.replace("\n"," "), origen: p.slug }),
     }).catch(() => {});
+
     const msg = encodeURIComponent(`Hola, solicito el dossier de ${p.name.replace("\n"," ")}.\nNombre: ${d.nombre} ${d.apellidos}\nEmail: ${d.email}\nTeléfono: ${d.telefono}`);
     window.open(`https://wa.me/34610589716?text=${msg}`, "_blank");
     setSent(true);
@@ -98,7 +129,6 @@ export default function ProjectFicha(p: Props) {
 
       {/* CONTENT */}
       <main className="relative z-10 pt-[68px]">
-        {/* PANEL 1: Apertura */}
         <section className="min-h-screen flex items-center px-6 md:px-16 py-20 panel">
           <div className="max-w-2xl">
             <div className="text-[11px] font-medium tracking-[0.28em] uppercase mb-4" style={{ color: p.accent }}>{p.num} — La ficha</div>
@@ -108,7 +138,6 @@ export default function ProjectFicha(p: Props) {
           </div>
         </section>
 
-        {/* PANEL 2: Visión */}
         <section className="px-6 md:px-16 py-20">
           <div className="max-w-2xl mx-auto panel">
             <div className="text-[11px] font-medium tracking-[0.28em] uppercase mb-4" style={{ color: p.accent }}>La visión</div>
@@ -118,7 +147,6 @@ export default function ProjectFicha(p: Props) {
           </div>
         </section>
 
-        {/* EXTRA SECTIONS — opcionales, definidas por cada proyecto */}
         {p.extraSections?.map((sec, i) => (
           <section key={i} id={sec.id} className={`px-6 md:px-16 py-20 ${sec.bg ?? "bg-charcoal-950"}`}>
             <div className="max-w-2xl mx-auto panel">
@@ -129,7 +157,6 @@ export default function ProjectFicha(p: Props) {
           </section>
         ))}
 
-        {/* PANEL 3: Cifras + diseño */}
         <section className="px-6 md:px-16 py-20">
           <div className="max-w-2xl mx-auto panel">
             <div className="text-[11px] font-medium tracking-[0.28em] uppercase mb-4" style={{ color: p.accent }}>El edificio</div>
@@ -143,7 +170,6 @@ export default function ProjectFicha(p: Props) {
           </div>
         </section>
 
-        {/* PANEL 4: Residencias + galería */}
         <section className="px-6 md:px-16 py-20">
           <div className="max-w-2xl mx-auto panel">
             <div className="text-[11px] font-medium tracking-[0.28em] uppercase mb-4" style={{ color: p.accent }}>Las residencias</div>
@@ -160,7 +186,6 @@ export default function ProjectFicha(p: Props) {
           </div>
         </section>
 
-        {/* PANEL 5: Amenidades */}
         <section className="px-6 md:px-16 py-20">
           <div className="max-w-2xl mx-auto panel">
             <div className="text-[11px] font-medium tracking-[0.28em] uppercase mb-4" style={{ color: p.accent }}>Amenidades</div>
@@ -175,7 +200,6 @@ export default function ProjectFicha(p: Props) {
           </div>
         </section>
 
-        {/* PANEL 6: Ubicación */}
         <section className="px-6 md:px-16 py-20">
           <div className="max-w-2xl mx-auto panel">
             <div className="text-[11px] font-medium tracking-[0.28em] uppercase mb-4" style={{ color: p.accent }}>La ubicación</div>
@@ -184,7 +208,6 @@ export default function ProjectFicha(p: Props) {
           </div>
         </section>
 
-        {/* PANEL 7: Proceso */}
         <section className="px-6 md:px-16 py-20">
           <div className="max-w-2xl mx-auto panel">
             <div className="text-[11px] font-medium tracking-[0.28em] uppercase mb-4" style={{ color: p.accent }}>El proceso</div>
@@ -200,7 +223,6 @@ export default function ProjectFicha(p: Props) {
           </div>
         </section>
 
-        {/* PANEL 8: Dossier */}
         <section id="dossier" className="px-6 md:px-16 py-20">
           <div className="max-w-xl mx-auto panel text-center">
             <div className="text-[11px] font-medium tracking-[0.28em] uppercase mb-4" style={{ color: p.accent }}>Acceso privado</div>
@@ -210,7 +232,7 @@ export default function ProjectFicha(p: Props) {
               <p className="font-serif italic text-lg py-8">Gracias. Complete el envío en WhatsApp — responderemos en menos de 24h.</p>
             ) : (
               <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-left">
-                <input name="nombre" placeholder="Nombre" required className={`${inputCls} border-charcoal-700 text-cream`} style={{ ['--tw-border-color' as string]: p.accent }} />
+                <input name="nombre" placeholder="Nombre" required className={`${inputCls} border-charcoal-700 text-cream`} />
                 <input name="apellidos" placeholder="Apellidos" required className={`${inputCls} border-charcoal-700 text-cream`} />
                 <input name="email" type="email" placeholder="Email" required className={`sm:col-span-2 ${inputCls} border-charcoal-700 text-cream`} />
                 <input name="telefono" type="tel" placeholder="Teléfono / WhatsApp" required className={`sm:col-span-2 ${inputCls} border-charcoal-700 text-cream`} />
