@@ -42,6 +42,7 @@ export default function ProjectFicha(p: Props) {
 
   useEffect(() => {
     document.body.classList.add("no-loader");
+    document.body.classList.add("loaded");
     const meta = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement | null;
     if (meta) meta.setAttribute("content", p.themeColor);
 
