@@ -1,8 +1,20 @@
-import Script from "next/script";
+'use client';
 
-const PIXEL_ID = "2277888696292134";
+import Script from 'next/script';
+import { useEffect } from 'react';
+import { track } from './useTracker';
+
+const PIXEL_ID = '2277888696292134';
 
 export default function MetaPixel() {
+  useEffect(() => {
+    track({
+      event_name: 'page_view',
+      page_title: document.title,
+      page_category: 'general'
+    });
+  }, []);
+
   return (
     <>
       <Script
@@ -19,17 +31,13 @@ export default function MetaPixel() {
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '${PIXEL_ID}');
-            fbq('track', 'PageView');
           `,
         }}
       />
       <noscript>
-        <img
-          height="1" width="1"
-          style={{ display: "none" }}
+        <img height="1" width="1" style={{ display: 'none' }}
           src={`https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`}
-          alt=""
-        />
+          alt="" />
       </noscript>
     </>
   );
