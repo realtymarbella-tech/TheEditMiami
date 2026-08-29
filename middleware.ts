@@ -1,10 +1,18 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from 'next/server';
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
+  if (request.nextUrl.pathname === '/api/webhook/meta-leads' && request.method === 'POST') {
+    const body = await request.text();
+    request.headers.set('x-raw-body', body);
+    return NextResponse.next({
+      request: {
+        headers: request.headers,
+      },
+    });
+  }
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|images|videos|robots|sitemap|google).*)"],
+  matcher: ['/api/webhook/meta-leads'],
 };

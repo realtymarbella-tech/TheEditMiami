@@ -35,7 +35,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  const rawBody   = await req.text();
+  const rawBody   = req.headers.get('x-raw-body') || await req.text();
   const signature = req.headers.get('x-hub-signature-256');
 
   if (!verifySignature(rawBody, signature)) {
@@ -104,7 +104,7 @@ export async function POST(req: NextRequest) {
             }]})
           }
         );
-        console.info('[Webhook] Lead procesado:', leadgen_id, '| score:', leadScore, '| status:', leadStatus);
+        console.info('[Webhook] Lead procesado:', leadgen_id);
       }
     }
   })();
