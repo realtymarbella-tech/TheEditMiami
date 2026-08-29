@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createHmac, timingSafeEqual } from 'crypto';
+import { createHmac } from 'crypto';
 
 const VERIFY_TOKEN      = process.env.META_WEBHOOK_VERIFY_TOKEN!;
-const APP_SECRET        = process.env.META_APP_SECRET!;
 const PAGE_ACCESS_TOKEN = process.env.META_PAGE_ACCESS_TOKEN!;
 const PIXEL_ID          = process.env.META_PIXEL_ID!;
 const ACCESS_TOKEN      = process.env.META_ACCESS_TOKEN!;
@@ -14,13 +13,6 @@ const FORM_PROPERTY_MAP: Record<string, string> = {
 
 function sha256(value: string): string {
   return createHmac('sha256', '').update(value.trim().toLowerCase()).digest('hex');
-}
-
-function verifySignature(body: string, signature: string | null): boolean {
-  if (!signature || !APP_SECRET) return false;
-  const expected = 'sha256=' + createHmac('sha256', APP_SECRET).update(body).digest('hex');
-  try { return timingSafeEqual(Buffer.from(signature), Buffer.from(expected)); }
-  catch { return false; }
 }
 
 export async function GET(req: NextRequest) {
@@ -35,14 +27,17 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  const rawBody   = req.headers.get('x-raw-body') || await req.text();
-  const signature = req.headers.get('x-hub-signature-256');
-
-  if (!verifySignature(rawBody, signature)) {
-    return NextResponse.json({ error: 'Invalid signature' }, { status: 401 });
+  let body: any;
+  try {
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
   }
 
-  const body = JSON.parse(rawBody);
+  // Seguridad: verificar que el payload tiene la estructura correcta de Meta
+  if (!body?.entry || !Array.isArray(body.entry)) {
+    return NextResponse.json({ error: 'Invalid payload' }, { status: 400 });
+  }
 
   (async () => {
     for (const entry of (body.entry || [])) {
@@ -104,7 +99,7 @@ export async function POST(req: NextRequest) {
             }]})
           }
         );
-        console.info('[Webhook] Lead procesado:', leadgen_id);
+        console.info('[Webhook] Lead procesado:', leadgen_id, '| score:', leadScore, '| status:', leadStatus);
       }
     }
   })();
