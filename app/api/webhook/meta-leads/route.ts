@@ -9,7 +9,7 @@ const ACCESS_TOKEN      = process.env.META_ACCESS_TOKEN!;
 const SCORER_URL        = process.env.SCORER_URL || 'https://scoring-ashen.vercel.app';
 
 const FORM_PROPERTY_MAP: Record<string, string> = {
-  '1601819651446955': 'SCR-001', // Cipriani - SMC-Luxury-Video-Leads-Aug26
+  '1601819651446955': 'SMC-GENERAL',
 };
 
 function sha256(value: string): string {
