@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
             body: JSON.stringify({
               lead_id: leadgen_id, source: 'meta_lead_form',
               property_id: propertyId,
-              email: !!fields.email, phone: !!fields.phone_number,
+              email: !!fields.email, phone: !!(fields.phone || fields.phone_number),
               first_name: !!(fields.full_name || fields.first_name),
               fbp: false, property_views: 0, time_on_site_seconds: 0,
               pages_visited: 0, cta_clicks: 0, scroll_depth_pct: 0, repeat_visit: false
@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
               action_source:    'website',
               user_data: {
                 em: fields.email        ? sha256(fields.email) : undefined,
-                ph: fields.phone_number ? sha256(fields.phone_number.replace(/\D/g, '')) : undefined,
+                ph: (fields.phone || fields.phone_number) ? sha256((fields.phone || fields.phone_number).replace(/\D/g, '')) : undefined,
                 fn: (fields.first_name || fields.full_name?.split(' ')[0])
                     ? sha256(fields.first_name || fields.full_name.split(' ')[0]) : undefined,
               },
