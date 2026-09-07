@@ -7,8 +7,10 @@ const PIXEL_ID          = process.env.META_PIXEL_ID!;
 const ACCESS_TOKEN      = process.env.META_ACCESS_TOKEN!;
 const SCORER_URL        = process.env.SCORER_URL || 'https://scoring-ashen.vercel.app';
 
-const FORM_PROPERTY_MAP: Record<string, string> = {
-  '1601819651446955': 'SMC-GENERAL',
+// Mapa por ad_id (cada anuncio = un desarrollo distinto, el form es compartido)
+const AD_PROPERTY_MAP: Record<string, string> = {
+  '52577370100472': 'CIPRIANI',    // Cipriani_Residences_V3
+  '52576955620472': 'ONE_TWENTY',  // One Twenty
 };
 
 function sha256(value: string): string {
@@ -52,7 +54,7 @@ export async function POST(req: NextRequest) {
         const fields: Record<string, string> = {};
         for (const f of (leadData.field_data || [])) fields[f.name] = f.values?.[0] || '';
 
-        const propertyId = FORM_PROPERTY_MAP[form_id] || null;
+        const propertyId = AD_PROPERTY_MAP[ad_id] || null;
 
         let leadScore = null, leadStatus = null;
         try {
